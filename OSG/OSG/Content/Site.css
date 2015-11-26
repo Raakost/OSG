@@ -1,0 +1,77 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #151414;
+    color: #999999;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.front_page_jumbotron {
+    padding: 0px;
+    margin-top: 90px;
+    background-color: #151414;
+}
+
+    .front_page_jumbotron img {
+        border-radius: 4px;
+    }
+
+.frontpage_footer {
+    margin-bottom: 50px;
+}
+
+hr {
+    border: 1px solid #2F2F2F;
+}
+
+.embedded_map {
+    margin-top: 24px;
+}
+
+.logo img {
+    width: 100px;
+    margin-right: 50px;
+}
+
+.navbar-inverse {
+    background-color: #080808;
+    border-color: #2F2F2F;
+}
+
+.navbar-nav li {
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #A20C17;
+}
+
+.navbar-nav a {
+    margin-right: 40px;
+}
+
+li.logo {
+    margin-top: 0px;
+    padding: 0px;
+}

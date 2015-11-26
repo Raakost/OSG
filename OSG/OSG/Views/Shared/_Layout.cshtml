@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old School Gym</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                @*@Html.ActionLink("Old School Gym", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="logo">
+                        <a href="../Home/Index"><img src="~/Content/Pictures/oldschoolgym logo.png" /></a>
+                    </li>
+                    <li>@Html.ActionLink("Nyheder", "Index", "News")</li>
+                    <li>@Html.ActionLink("Events", "Index", "Events")</li>
+                    <li>@Html.ActionLink("Medlemsskab/Priser", "Index", "MemberPrice")</li>
+                    <li>@Html.ActionLink("Personlige Trænere", "Index", "Trainer")</li>
+                </ul>
+                @*@Html.Partial("_LoginPartial")*@
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="row frontpage_footer">
+
+                <div class="col-md-4 contact">
+                    <h3>Kontakt</h3>
+                    <table>
+                        <tr>
+                            <td>Telefon : 22334455</td>
+                        </tr>
+                        <tr>
+                            <td>Email : OSG@mail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Eller kom forbi i centret til en snak!</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+                <div class="col-md-4 openinghours">
+                    <h3>Åbningstider</h3>
+                    <table>
+                        <tr>
+                            <td>Mandag&nbsp;</td>
+                            <td>&nbsp;5.30 - 23.00</td>
+                        </tr>
+                        <tr>
+                            <td>Tirsdag&nbsp;</td>
+                            <td>&nbsp;5.30 - 23.00</td>
+                        </tr>
+                        <tr>
+                            <td>Onsdag&nbsp;</td>
+                            <td>&nbsp;5.30 - 23.00</td>
+                        </tr>
+                        <tr>
+                            <td>Torsdag&nbsp;</td>
+                            <td>&nbsp;5.30 - 23.00</td>
+                        </tr>
+                        <tr>
+                            <td>Fredag&nbsp;</td>
+                            <td>&nbsp;5.30 - 23.00</td>
+                        </tr>
+                        <tr>
+                            <td>Lørdag&nbsp;</td>
+                            <td>&nbsp;5.30 - 23.00</td>
+                        </tr>
+                        <tr>
+                            <td>Søndag&nbsp;</td>
+                            <td>&nbsp;5.30 - 23.00</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-4 embedded_map">
+                    <iframe width="330" height="200" frameborder="0" style="border: 0"
+                            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJt4FCH9UgS0YROI6cgBEhp-0&key=AIzaSyBdyJRYWh1mzBHlLDgqbx0GQ1Zoj9RHR4M" allowfullscreen></iframe>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
