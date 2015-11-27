@@ -45,7 +45,7 @@ namespace DAL.Managers
             }
         }
 
-        public Comment ReadByID(int id)
+        public Comment ReadByID(int Id)
         {
             using (var ctx = new OSGContext())
             {

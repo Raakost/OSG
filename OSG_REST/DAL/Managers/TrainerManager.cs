@@ -45,7 +45,7 @@ namespace DAL.Managers
             }
         }
 
-        public Trainer ReadByID(int id)
+        public Trainer ReadByID(int Id)
         {
             using (var ctx = new OSGContext())
             {

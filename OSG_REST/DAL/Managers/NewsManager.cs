@@ -14,7 +14,7 @@ namespace DAL.Managers
         public News Create(News model)
         {
             using (var ctx = new OSGContext())
-            {                
+            {
                 ctx.News.Attach(model);
                 var newsToReturn = ctx.News.Add(model);
                 ctx.SaveChanges();
@@ -22,24 +22,53 @@ namespace DAL.Managers
             }
         }
 
-        public bool Delete(News model)
+        public bool Delete(News model)  
         {
-            throw new NotImplementedException();
+            using (var ctx = new OSGContext())
+            {
+                var newsToDelete = ctx.News.FirstOrDefault(news => news.Id == model.Id);
+                if (newsToDelete != null)
+                {
+                    ctx.News.Remove(newsToDelete);
+                    ctx.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
         }
 
         public IEnumerable<News> ReadAll()
         {
-            throw new NotImplementedException();
+            using (var ctx = new OSGContext())
+            {
+                return ctx.News.ToList();
+            }
         }
 
-        public News ReadByID(int id)
+
+        public News ReadByID(int Id)
         {
-            throw new NotImplementedException();
+            using (var ctx = new OSGContext())
+            {
+                return ctx.News.FirstOrDefault(news => news.Id == Id);
+            }
         }
 
         public News Update(News model)
         {
-            throw new NotImplementedException();
+            using (var ctx = new OSGContext())
+            {
+                var newsToUpdate = ctx.News.FirstOrDefault(news => news.Id == model.Id);
+                if (newsToUpdate != null)
+                {
+                    newsToUpdate.Date = model.Date;
+                    newsToUpdate.Description = model.Description;
+                    newsToUpdate.Picture = model.Picture;
+                    newsToUpdate.Title = model.Title;
+                    return newsToUpdate;
+                }
+                return model;
+            }
         }
     }
 }
