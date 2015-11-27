@@ -49,7 +49,7 @@ namespace DAL.Managers
         {
             using (var ctx = new OSGContext())
             {
-                return ctx.Comment.Include("News").FirstOrDefault(comment => comment.Id == id);
+                return ctx.Comment.Include("News").FirstOrDefault(comment => comment.Id == Id);
             }
         }
 
