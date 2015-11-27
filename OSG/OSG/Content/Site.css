@@ -39,6 +39,11 @@ textarea {
     margin-bottom: 50px;
 }
 
+    .frontpage_footer.row {
+        margin-right: -57px;
+        margin-left: -14px;
+    }
+
 hr {
     border: 1px solid #2F2F2F;
 }

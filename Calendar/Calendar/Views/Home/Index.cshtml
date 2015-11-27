@@ -1,0 +1,40 @@
+﻿@{
+    var now = DateTime.Now;
+    var firstDayOfMonth = new DateTime(now.Year, now.Month, 1);
+    var events = new List<dynamic>()
+    {
+        new { Date = new DateTime(2015, 11, 25), Title = "This is an event" }
+    };
+}
+<table>
+    <thead>
+        <tr>
+            @for (int i = 0; i < 7; i++)
+            {
+                var day = firstDayOfMonth.AddDays(i);
+                <td>@day.DayOfWeek.ToString()</td>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 1; i <= DateTime.DaysInMonth(now.Year, now.Month); i++)
+        {
+            var eventsToday = events.Where(x => x.Date.Month == now.Month && x.Date.Year == now.Year && x.Date.Day == i);
+            if (i % 7 == 1)
+            {
+                @Html.Raw("<tr>")
+            }
+            <td>
+                @i
+                @foreach (var e in eventsToday)
+                {
+                    <br />@e.Title
+                }
+            </td>
+            if (i % 7 == 0)
+            {
+                @Html.Raw("</tr>")
+            }
+        }
+    </tbody>
+</table>

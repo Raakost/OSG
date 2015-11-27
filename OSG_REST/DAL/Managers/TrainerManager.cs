@@ -25,7 +25,7 @@ namespace DAL.Managers
             throw new NotImplementedException();
         }
 
-        public Trainer ReadByID(int id)
+        public Trainer ReadByID(int Id)
         {
             throw new NotImplementedException();
         }

@@ -25,7 +25,7 @@ namespace DAL.Managers
             throw new NotImplementedException();
         }
 
-        public Comment ReadByID(int id)
+        public Comment ReadByID(int Id)
         {
             throw new NotImplementedException();
         }
