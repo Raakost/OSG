@@ -12,7 +12,7 @@ namespace DAL.Context
     {
         public DbSet<News> News { get; set; }
         public DbSet<Event> Event { get; set; }
-        public DbSet Trainer { get; set; }
+        public DbSet<Trainer> Trainer { get; set; }
         public DbSet<Comment> Comment { get; set; }
 
         //If OSG db doesn't exist, it will be created using the dbInitializer.
