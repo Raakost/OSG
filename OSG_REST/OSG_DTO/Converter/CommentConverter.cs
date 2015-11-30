@@ -31,5 +31,28 @@ namespace OSG_DTO.Converter
             }
             return dto;
         }
+
+        public override Comment ConvertDTO(CommentDTO item)
+        {
+            var model = new Comment()
+            {
+                Id = item.Id,
+                CommentText = item.CommentText,
+                Name = item.Name
+            };
+
+            if (item.News != null)
+            {
+                model.News = new News()
+                {
+                    Id = item.News.Id,
+                    Description = item.News.Description,
+                    Date = item.News.Date,
+                    Picture = item.News.Picture,
+                    Title = item.News.Title
+                };
+            }
+            return model;
+        }
     }
 }
