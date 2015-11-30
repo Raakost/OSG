@@ -25,6 +25,6 @@ namespace OSG_DTO
         [DataMember]
         public string Description { get; set; }
         [DataMember]
-        public IEnumerable<EventDTO> Events { get; set; }
+        public List<EventDTO> Events { get; set; }
     }
 }
