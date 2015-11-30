@@ -15,7 +15,7 @@ namespace OSG_DTO
         [DataMember]
         public DateTime Date { get; set; }
         [DataMember]
-        public IEnumerable<TrainerDTO> Trainers { get; set; }
+        public List<TrainerDTO> Trainers { get; set; }
         [DataMember]
         public string Description { get; set; }
         [DataMember]

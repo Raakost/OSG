@@ -50,6 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\AbstractDTOConverter.cs" />
+    <Compile Include="Converter\CommentConverter.cs" />
+    <Compile Include="Converter\EventConverter.cs" />
+    <Compile Include="Converter\NewsConverter.cs" />
+    <Compile Include="Converter\TrainerConverter.cs" />
     <Compile Include="DTO\CommentDTO.cs" />
     <Compile Include="DTO\EventDTO.cs" />
     <Compile Include="DTO\NewsDTO.cs" />
@@ -59,6 +64,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{34a68a32-9f66-4657-80a8-07097fa29680}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

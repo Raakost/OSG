@@ -21,6 +21,6 @@ namespace OSG_DTO
         [DataMember]
         public string Title { get; set; }
         [DataMember]
-        public IEnumerable<CommentDTO> Comments { get; set; }
+        public List<CommentDTO> Comments { get; set; }
     }
 }
