@@ -203,6 +203,7 @@
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Trainer.cs" />
     <Compile Include="Models\ViewModel\EventCalendar.cs" />
+    <Compile Include="Models\ViewModel\EventIndex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -264,12 +265,14 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\Events\Calendar.cshtml" />
+    <Content Include="Views\Events\EventInfoPane.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\Admin\" />
     <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Events\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

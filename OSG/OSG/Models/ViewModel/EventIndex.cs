@@ -5,9 +5,9 @@ using System.Web;
 
 namespace OSG.Models.ViewModel
 {
-    public class EventCalendar
+    public class EventIndex
     {
-        public DateTime Month { get; set; }
-        public List<Event> Events { get; set; }
+        public int? EventId { get; set; }
+        public DateTime? Month { get; set; }
     }
 }

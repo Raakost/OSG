@@ -1,0 +1,74 @@
+﻿@using OSG.Models
+@model OSG.Models.ViewModel.EventCalendar
+
+
+@{
+    var now = Model.Month;
+    var firstDayOfMonth = new DateTime(now.Year, now.Month, 1 /*first day of month*/);
+}
+
+<h1>@now.ToString("MMMM")</h1>
+<table class="table-calendar">
+    <thead>
+        <tr>
+            @for (int i = 0; i < 7; i++)
+            {
+                var day = firstDayOfMonth.AddDays(i);
+                <td>@day.DayOfWeek.ToString()</td>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @for (int i = 1; i < 8; i++)
+            {
+                var eventsToday = GetEventsForDate(i, now.Month, now.Year);
+                <td>
+                    <div class="date">@i</div>
+                    <ul class="events">
+                        @foreach (var e in eventsToday)
+                        {
+
+                            <li>@e.Title</li>
+                        }
+                    </ul>
+                </td>
+            }
+        </tr>
+        <tr>
+            @for (int i = 8; i < 15; i++)
+            {
+                <td><div class="date">@i</div></td>
+            }
+        </tr>
+        <tr>
+            @for (int i = 15; i < 22; i++)
+            {
+                <td><div class="date">@i</div></td>
+            }
+        </tr>
+        <tr>
+            @for (int i = 22; i < 29; i++)
+            {
+                <td><div class="date">@i</div></td>
+            }
+        </tr>
+        <tr>
+            @for (int i = 29; i <= DateTime.DaysInMonth(firstDayOfMonth.Year, firstDayOfMonth.Month); i++)
+            {
+                <td><div class="date">@i</div></td>
+            }
+        </tr>
+    </tbody>
+</table>
+
+@functions
+{
+
+    public List<Event> GetEventsForDate(int day, int month, int year)
+    {
+        DateTime eventDate = new DateTime(year, month, day);
+        return Model.Events.Where(x => x.Date.Date == eventDate).ToList();
+    }
+
+}

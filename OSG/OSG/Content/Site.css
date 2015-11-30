@@ -1,6 +1,4 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
     background-color: #151414;
     color: #999999;
 }
@@ -9,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    margin-top: 146px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -27,7 +26,6 @@ textarea {
 
 .front_page_jumbotron {
     padding: 0px;
-    margin-top: 90px;
     background-color: #151414;
 }
 
@@ -75,4 +73,37 @@ hr {
 li.logo {
     margin-top: 0px;
     padding: 0px;
+}
+
+.table-calendar tr {
+    border-bottom: 1px solid white;
+}
+
+    .table-calendar tr:last-child {
+        border-bottom: none;
+    }
+
+.table-calendar thead tr:last-child {
+    border-bottom: 1px solid white;
+}
+
+.table-calendar thead td {
+    height: 12px;
+    text-align: center;
+}
+
+.table-calendar td {
+    border-left: 1px solid white;
+    height: 95px;
+    width: 160px;
+    position: relative;
+}
+
+    .table-calendar td:first-child {
+        border-left: none;
+    }
+
+.table-calendar .date {
+    position: absolute;
+    top: 0px;
 }
