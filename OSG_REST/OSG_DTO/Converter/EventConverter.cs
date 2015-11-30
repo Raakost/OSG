@@ -38,5 +38,34 @@ namespace OSG_DTO.Converter
             }
             return dto;
         }
+
+        public override Event ConvertDTO(EventDTO item)
+        {
+            var model = new Event()
+            {
+                Id = item.Id,
+                Description = item.Description,
+                Date = item.Date,
+                Title = item.Title
+            };
+            if (item.Trainers != null)
+            {
+                model.Trainers = new List<Trainer>();
+                foreach (var trainer in item.Trainers)
+                {
+                    model.Trainers.Add(new Trainer()
+                    {
+                        Id = trainer.Id,
+                        Description = trainer.Description,
+                        Picture = trainer.Picture,
+                        Email = trainer.Email,
+                        FirstName = trainer.FirstName,
+                        LastName = trainer.LastName,
+                        PhoneNo = trainer.PhoneNo
+                    });
+                }
+            }
+            return model;
+        }
     }
 }

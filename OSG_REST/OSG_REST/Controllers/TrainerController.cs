@@ -6,15 +6,24 @@ using System.Net.Http;
 using System.Web.Http;
 using DAL;
 using OSG_DTO;
+using OSG_DTO.Converter;
 
 namespace OSG_REST.Controllers
 {
     public class TrainerController : ApiController
     {
-        //[HttpGet]
-        //public IEnumerable<TrainerDTO> ReadAll()
+        //[HttpPost]
+        //public TrainerDTO Create(TrainerDTO dto)
         //{
-        //    return new Facade().GetTrainerManager().ReadAll();
-        //} 
+        //    var trainer = new Facade().GetTrainerManager().Create();
+        //    return new TrainerConverter().ConvertModel(trainer);
+        //}
+        [HttpGet]
+        public IEnumerable<TrainerDTO> ReadAll()
+        {
+            return new TrainerConverter().Convert(new Facade().GetTrainerManager().ReadAll());
+        }
+
+
     }
 }
