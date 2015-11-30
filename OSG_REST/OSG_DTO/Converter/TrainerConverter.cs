@@ -37,5 +37,34 @@ namespace OSG_DTO.Converter
             }
             return dto;
         }
+
+        public override Trainer ConvertDTO(TrainerDTO item)
+        {
+            var model = new Trainer()
+            {
+                Id = item.Id,
+                Description = item.Description,
+                Picture = item.Picture,
+                FirstName = item.FirstName,
+                LastName = item.LastName,
+                Email = item.Email,
+                PhoneNo = item.PhoneNo
+            };
+            if (item.Events != null)
+            {
+                model.Events = new List<Event>();
+                foreach (var anEvent in item.Events)
+                {
+                    model.Events.Add(new Event()
+                    {
+                        Id = anEvent.Id,
+                        Description = anEvent.Description,
+                        Date = anEvent.Date,
+                        Title = anEvent.Title
+                    });
+                }
+            }
+            return model;
+        }
     }
 }
