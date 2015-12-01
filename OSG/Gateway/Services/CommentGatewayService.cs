@@ -11,7 +11,7 @@ namespace Gateway.Services
 {
     public class CommentGatewayService : IGatewayService<Comment>
     {
-        private string HttpLink = "http://localhost:14718/api/";
+        private string HttpLink = "http://localhost:26887/api/";
         private string ControllerName = "comment/";
 
         public Comment Add(Comment model)

@@ -11,7 +11,7 @@ namespace Gateway.Services
 {
     public class NewsGatewayService : IGatewayService<News>
     {
-        private string HttpLink = "http://localhost:14718/api/";
+        private string HttpLink = "http://localhost:26887/api/";
         private string ControllerName = "news/";
         public News Add(News model)
         {

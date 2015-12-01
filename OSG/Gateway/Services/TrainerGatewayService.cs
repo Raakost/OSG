@@ -11,7 +11,7 @@ namespace Gateway.Services
 {
     public class TrainerGatewayService : IGatewayService<Trainer>
     {
-        private string HttpLink = "http://localhost:14718/api/";
+        private string HttpLink = "http://localhost:26887/api/";
         private string ControllerName = "trainer/";
         public Trainer Add(Trainer model)
         {
