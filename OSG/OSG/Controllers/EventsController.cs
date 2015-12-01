@@ -21,6 +21,13 @@ namespace OSG.Controllers
                 Description = "This is the first event, EVER!!",
                 Date = new DateTime(2015, 12, 02)
             });
+            events.Add(new Event()
+            {
+                Id = 2,
+                Title = "Second Event",
+                Description = "This is the first event, EVER!!",
+                Date = new DateTime(2015, 12, 02)
+            });
         }
         // GET: Events
         public ActionResult Index(EventIndex viewModel)

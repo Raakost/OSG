@@ -75,8 +75,12 @@ li.logo {
     padding: 0px;
 }
 
+.month-header {
+    text-transform: capitalize;
+}
+
 .table-calendar tr {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #999999;
 }
 
     .table-calendar tr:last-child {
@@ -84,7 +88,7 @@ li.logo {
     }
 
 .table-calendar thead tr:last-child {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #999999;
 }
 
 .table-calendar thead td {
@@ -93,7 +97,7 @@ li.logo {
 }
 
 .table-calendar td {
-    border-left: 1px solid white;
+    border-left: 1px solid #999999;
     height: 95px;
     width: 160px;
     position: relative;
@@ -107,3 +111,21 @@ li.logo {
     position: absolute;
     top: 0px;
 }
+
+.events {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.trigger-button {
+    padding: 2px 4px;
+    background-color: #884146;
+    border-radius: 4px;
+    border: 0px outset buttonface;
+}
+/*.trigger-button:focus {
+    padding: 2px 4px;
+    background-color: #884146;
+    border-radius: 4px;
+    border: 0px outset buttonface;
+}*/
