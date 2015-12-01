@@ -9,6 +9,16 @@
 
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/da_DK/sdk.js#xfbml=1&version=v2.5";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -29,6 +39,7 @@
                     <li>@Html.ActionLink("Events", "Index", "Events")</li>
                     <li>@Html.ActionLink("Medlemsskab/Priser", "Index", "MemberPrice")</li>
                     <li>@Html.ActionLink("Personlige Trænere", "Index", "Trainer")</li>
+
                 </ul>
                 @*@Html.Partial("_LoginPartial")*@
             </div>
@@ -42,33 +53,39 @@
                 <div class="col-md-4 contact">
                     <table>
                         <tr>
-                            <td><h3>Kontakt</h3></td>
+                            <td>
+                                <h4>Kontakt</h4>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Telefon : 22334455</td>
+                            <td>Telefon : +45 26 98 70 66</td>
                         </tr>
                         <tr>
-                            <td>Email : OSG@mail.com</td>
+                            <td>Email : info@oldschoolgymesbjerg.dk</td>
                         </tr>
                         <tr>
                             <td>Eller kom forbi i centret til en snak!</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="fb-like" data-href="https://www.facebook.com/Old-School-Gym-Esbjerg-1670721003141954/" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+                            </td>
                         </tr>
                     </table>
                 </div>
                 <div class="col-md-4 openinghours">
                     <table>
                         <tr>
-                            <td><h3>Åbningstider</h3></td>
+                            <td>
+                                <h4>Åbningstider</h4>
+                            </td>
                         </tr>
                         <tr>
                             <td>Mandag - Søndag</td>
                             <td>&nbsp;5.00 - 23.00</td>
                         </tr>
                         <tr>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td><h4>Bemandet åbningstider:</h4></td>
+                            <td><h5 class="bemandet">Bemandet åbningstider:</h5></td>
                         </tr>
                         <tr>
                             <td>Mandag - Fredag</td>
@@ -82,9 +99,6 @@
                 </div>
                 <div class="col-md-4 embedded_map">
                     <table>
-                        <tr>
-                            <td><h3>Find os her!</h3></td>
-                        </tr>
                         <tr>
                             <td>
                                 <iframe width="330" height="200" frameborder="0" style="border: 0"
