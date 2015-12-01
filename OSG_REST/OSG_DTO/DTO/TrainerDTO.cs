@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OSG_DTO
 {
     [DataContract]
     public class TrainerDTO
     {
+        [Key]
         [DataMember]
         public int Id { get; set; }
         [DataMember]
@@ -23,6 +21,7 @@ namespace OSG_DTO
         [DataMember]
         public string Picture { get; set; }
         [DataMember]
+        [MaxLength(5000)]
         public string Description { get; set; }
         [DataMember]
         public List<EventDTO> Events { get; set; }
