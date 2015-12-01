@@ -5,9 +5,9 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-top: 146px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 135px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -24,12 +24,21 @@ textarea {
     max-width: 280px;
 }
 
-.front_page_jumbotron {
+/*.front_page_jumbotron {
     padding: 0px;
     background-color: #151414;
 }
 
     .front_page_jumbotron img {
+        border-radius: 4px;
+    }*/
+
+#myCarousel {
+    width: 100%;
+}
+
+    #myCarousel img {
+        width: 100%;
         border-radius: 4px;
     }
 
@@ -38,17 +47,18 @@ textarea {
 }
 
     .frontpage_footer.row {
-        margin-right: -57px;
-        margin-left: -14px;
+        margin-right: -5px;
+        margin-left: -16px;
     }
 
 hr {
     border: 1px solid #2F2F2F;
+    margin-bottom: -10px;
 }
 
 .logo img {
     width: 100px;
-    margin-right: 118px;
+    margin-right: 80px;
 }
 
 .navbar-inverse {
@@ -67,7 +77,7 @@ hr {
 }
 
 .navbar-nav a {
-    margin-right: 40px;
+    margin-right: 60px;
 }
 
 li.logo {
@@ -109,7 +119,9 @@ li.logo {
 
 .table-calendar .date {
     position: absolute;
-    top: 0px;
+    top: -4px;
+    margin: 2px;
+    left: 4px;
 }
 
 .events {
@@ -119,13 +131,9 @@ li.logo {
 
 .trigger-button {
     padding: 2px 4px;
+    margin-bottom: 2px;
     background-color: #884146;
     border-radius: 4px;
     border: 0px outset buttonface;
+    opacity: 0.4;
 }
-/*.trigger-button:focus {
-    padding: 2px 4px;
-    background-color: #884146;
-    border-radius: 4px;
-    border: 0px outset buttonface;
-}*/
