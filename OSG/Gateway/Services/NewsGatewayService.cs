@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Gateway.Services.IGatewayService;
+using OSG.Models;
+using System.Net.Http;
+
+namespace Gateway.Services
+{
+    public class NewsGatewayService : IGatewayService<News>
+    {
+        private string HttpLink = "http://localhost:14718/api/";
+        private string ControllerName = "news/";
+        public News Add(News model)
+        {
+            using (var client = new HttpClient())
+            {
+                HttpResponseMessage response =
+                    client.PostAsJsonAsync(HttpLink + ControllerName, model).Result;
+                return response.Content.ReadAsAsync<News>().Result;
+            }
+        }
+
+        public bool Delete(News model)
+        {
+            using (var client = new HttpClient())
+            {
+                HttpResponseMessage response =
+                    client.DeleteAsync(HttpLink + ControllerName + model.Id).Result;
+                return response.Content.ReadAsAsync<Boolean>().Result;
+            }
+        }
+
+        public IEnumerable<News> ReadAll()
+        {
+            using (var client = new HttpClient())
+            {
+                HttpResponseMessage response =
+                    client.GetAsync(HttpLink + ControllerName).Result;
+                return response.Content.ReadAsAsync<IEnumerable<News>>().Result;
+            }
+        }
+
+        public News ReadById(int id)
+        {
+            using (var client = new HttpClient())
+            {
+                HttpResponseMessage response =
+                    client.GetAsync(HttpLink + ControllerName + id).Result;
+                return response.Content.ReadAsAsync<News>().Result;
+            }
+        }
+
+        public News Update(News model)
+        {
+            using (var client = new HttpClient())
+            {
+                HttpResponseMessage response =
+                    client.PutAsJsonAsync(HttpLink + ControllerName + model.Id, model).Result;
+                return response.Content.ReadAsAsync<News>().Result;
+            }
+        }
+    }
+}
