@@ -8,10 +8,11 @@ using DAL;
 using DAL.DomainModel;
 using OSG_DTO;
 using OSG_DTO.Converter;
+using OSG_REST.Controllers.IController;
 
 namespace OSG_REST.Controllers
 {
-    public class TrainerController : ApiController
+    public class TrainerController : ApiController, IOSGController<TrainerDTO>
     {
         [HttpPost]
         public TrainerDTO Create(TrainerDTO dto)
@@ -27,23 +28,23 @@ namespace OSG_REST.Controllers
         }
 
         [HttpGet]
-        public TrainerDTO ReadById(int Id)
+        public TrainerDTO ReadById(int id)
         {
-            return new TrainerConverter().ConvertModel(new Facade().GetTrainerManager().ReadByID(Id));
+            return new TrainerConverter().ConvertModel(new Facade().GetTrainerManager().ReadByID(id));
         }
 
         [HttpPut]
-        public TrainerDTO Update(int Id, TrainerDTO dto)
+        public TrainerDTO Update(int id, TrainerDTO dto)
         {
-            dto.Id = Id;
+            dto.Id = id;
             var trainer = new Facade().GetTrainerManager().Update(new TrainerConverter().ConvertDTO(dto));
             return new TrainerConverter().ConvertModel(trainer);
         }
 
         [HttpDelete]
-        public Boolean Delete(int Id)
+        public Boolean Delete(int id)
         {
-            var trainer = new Trainer() {Id = Id};
+            var trainer = new Trainer() { Id = id };
             if (new Facade().GetTrainerManager().Delete(trainer))
             {
                 return true;
