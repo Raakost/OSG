@@ -24,24 +24,19 @@ textarea {
     max-width: 280px;
 }
 
-/*.front_page_jumbotron {
-    padding: 0px;
-    background-color: #151414;
-}
 
-    .front_page_jumbotron img {
-        border-radius: 4px;
-    }*/
-
+/*---------------front page - set size on img in carousel---------------*/
 #myCarousel {
     width: 100%;
 }
 
     #myCarousel img {
         width: 100%;
-        border-radius: 4px;
+        border-radius: 3px;
     }
 
+
+/*---------------front page footer section - contact, opening hours, embedded map and FB like and share---------------*/
 .frontpage_footer {
     margin-bottom: 50px;
 }
@@ -51,11 +46,34 @@ textarea {
         margin-left: -16px;
     }
 
+.fb-like {
+    margin-top: 18px;
+}
+
+.embedded_map {
+    margin-top: 13px;
+}
+
+.bemandet {
+    margin-top: 26px;
+    font-weight: bold;
+}
+
+.contact h4, .openinghours h4 {
+    font-weight: bold;
+}
+
+.contact td {
+    padding-bottom: 5px;
+}
+
 hr {
     border: 1px solid #2F2F2F;
     margin-bottom: 5px;
 }
 
+
+/*---------------shared layout page and nav bar with logo---------------*/
 .logo img {
     width: 100px;
     margin-right: 80px;
@@ -85,6 +103,7 @@ li.logo {
     padding: 0px;
 }
 
+/*---------------calendar section, modal events---------------*/
 .month-header {
     text-transform: capitalize;
 }
@@ -138,23 +157,20 @@ li.logo {
     opacity: 0.4;
 }
 
-.fb-like {
-    margin-top: 18px;
+/*---------------news section "jumbotron"------------------------------*/
+.news_jumbo_img {
+    border-radius: 2px;
 }
 
-.embedded_map {
-    margin-top: 13px;
+.left_news, .center_news {
+    margin-right: 132px;
+    margin-left: -3px;
 }
 
-.bemandet {
-    margin-top: 26px;
-    font-weight: bold;
-}
+    .left_news img, .center_news img, .right_news img {
+        border-radius: 2px;
+    }
 
-.contact h4, .openinghours h4 {
-    font-weight: bold;
-}
-
-.contact td {
-    padding-bottom: 5px;
+.left_news, .center_news, .right_news {
+    padding: 0px;
 }
