@@ -213,7 +213,10 @@
     <Content Include="Content\Pictures\Facebook-Like-Button3.png" />
     <Content Include="Content\Pictures\FrontPage.jpg" />
     <Content Include="Content\Pictures\FrontPageGirlCuteButt.jpg" />
+    <Content Include="Content\Pictures\maskine.jpg" />
     <Content Include="Content\Pictures\oldschoolgym logo.png" />
+    <Content Include="Content\Pictures\oprydning.jpg" />
+    <Content Include="Content\Pictures\oprydning_2.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -270,10 +273,12 @@
     <Content Include="Views\Events\Calendar.cshtml" />
     <Content Include="Views\Events\EventInfoPane.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
+    
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\News\Options.cshtml" />
     <Content Include="Views\News\Create.cshtml" />
     <Content Include="Views\News\Edit.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
