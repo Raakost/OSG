@@ -65,6 +65,7 @@ namespace DAL.Managers
                     //There is no need to update the news which a comment is linked to, since you can't move 
                     //comments from one news to another or update a comment.
                     //
+                    ctx.SaveChanges();
                     return commentToUpdate;
                 }
                 return model;

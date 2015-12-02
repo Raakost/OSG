@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Gateway.Services.IGatewayService;
-using OSG.Models;
 using System.Net.Http;
+using Gateway.DomainModel;
 
 namespace Gateway.Services
 {
