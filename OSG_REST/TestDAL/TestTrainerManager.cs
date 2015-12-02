@@ -10,6 +10,7 @@ namespace TestDAL
     {
         private Trainer _trainer1;
         private Trainer _trainer2;
+        private Trainer _trainer3;
         private TrainerManager _trainerManager;
         [SetUp]
         public void Init()
@@ -24,12 +25,17 @@ namespace TestDAL
                 LastName = "Madsen",
                 Email = "mikkel@mail.com",
                 PhoneNo = "22334455",
-                Description = "A description",
+                Description = "A description"
             };
 
             _trainer2 = new Trainer()
             {
                 FirstName = "Rasmus"
+            };
+            _trainer3 = new Trainer()
+            {
+                Id = 3,
+                FirstName = "Kim"
             };
 
         }
@@ -45,7 +51,7 @@ namespace TestDAL
         public void Test_ReadAll_In_TrainerManager()
         {
             Assert.AreEqual(1, _trainerManager.ReadAll().Count());
-            var testTrainer =_trainerManager.Create(_trainer2);
+            var testTrainer = _trainerManager.Create(_trainer2);
 
             Assert.AreEqual(_trainer2.Id, testTrainer.Id);
             Assert.AreEqual(2, _trainerManager.ReadAll().Count());
@@ -60,7 +66,17 @@ namespace TestDAL
         [Test]
         public void Test_ReadByID_In_TrainerManager_After_Create()
         {
-            Assert.AreEqual(2, _trainerManager.ReadByID(2).Id);
+            _trainerManager.Create(_trainer3);
+            Assert.AreEqual(_trainer3.Id, _trainerManager.ReadByID(_trainer3.Id).Id);
+        }
+
+        [Test]
+        public void Test_Delete_Trainer()
+        {
+            _trainerManager.Create(_trainer3);
+            Assert.AreEqual(_trainer3.Id, _trainerManager.ReadByID(_trainer3.Id).Id);
+            var IsDeleted = _trainerManager.Delete(_trainer3);
+            Assert.AreEqual(true, IsDeleted);
         }
     }
 }
