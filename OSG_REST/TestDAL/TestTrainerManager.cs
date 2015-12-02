@@ -41,20 +41,20 @@ namespace TestDAL
         }
 
         //A test of how to do tests.
-        [Test]
-        public void Test_Trainer_First_Name_Property()
-        {
-            Assert.AreEqual("Mikkel", _trainerManager.ReadByID(_trainer1.Id).FirstName);
-        }
+        //[Test]
+        //public void Test_Trainer_First_Name_Property()
+        //{
+        //    Assert.AreEqual("Mikkel", _trainerManager.ReadByID(_trainer1.Id).FirstName);
+        //}
 
         [Test]
         public void Test_ReadAll_In_TrainerManager()
         {
-            Assert.AreEqual(1, _trainerManager.ReadAll().Count());
+            Assert.AreEqual(3, _trainerManager.ReadAll().Count());
             var testTrainer = _trainerManager.Create(_trainer2);
 
             Assert.AreEqual(_trainer2.Id, testTrainer.Id);
-            Assert.AreEqual(2, _trainerManager.ReadAll().Count());
+            Assert.AreEqual(4, _trainerManager.ReadAll().Count());
         }
 
         [Test]
@@ -73,9 +73,9 @@ namespace TestDAL
         [Test]
         public void Test_Delete_Trainer()
         {
-            _trainerManager.Create(_trainer3);
-            Assert.AreEqual(_trainer3.Id, _trainerManager.ReadByID(_trainer3.Id).Id);
-            var IsDeleted = _trainerManager.Delete(_trainer3);
+            _trainerManager.Create(_trainer2);
+            Assert.AreEqual(_trainer2.Id, _trainerManager.ReadByID(_trainer2.Id).Id);
+            var IsDeleted = _trainerManager.Delete(_trainer2);
             Assert.AreEqual(true, IsDeleted);
         }
     }

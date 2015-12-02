@@ -33,7 +33,7 @@ namespace OSG.Controllers
         [HttpPost]
         public ActionResult Create(News news)
         {
-            facade.GetNewsGateway().Add(new News()
+            facade.GetNewsGateway().Create(new News()
             {
                 Id = news.Id,
                 Description = news.Description,

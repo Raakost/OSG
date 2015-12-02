@@ -101,7 +101,7 @@ namespace OSG.Controllers
         [HttpPost]
         public ActionResult Create(Event anEvent)
         {
-            facade.GetEventGateway().Add(new Event()
+            facade.GetEventGateway().Create(new Event()
             {
                 Id = anEvent.Id,
                 Date = anEvent.Date,

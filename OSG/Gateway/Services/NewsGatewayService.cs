@@ -13,7 +13,7 @@ namespace Gateway.Services
     {
         private string HttpLink = "http://localhost:26887/api/";
         private string ControllerName = "news/";
-        public News Add(News model)
+        public News Create(News model)
         {
             using (var client = new HttpClient())
             {
@@ -33,12 +33,12 @@ namespace Gateway.Services
             }
         }
 
-        public IEnumerable<News> ReadAll()
+        public IEnumerable<News> ReadAll(int amound = 10)
         {
             using (var client = new HttpClient())
             {
                 HttpResponseMessage response =
-                    client.GetAsync(HttpLink + ControllerName).Result;
+                    client.GetAsync(HttpLink + ControllerName + "/GetByAmound/" + amound).Result;
                 return response.Content.ReadAsAsync<IEnumerable<News>>().Result;
             }
         }

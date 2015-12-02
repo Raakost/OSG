@@ -41,7 +41,7 @@ namespace DAL.Managers
         {
             using (var ctx = new OSGContext())
             {
-                return ctx.Event.ToList();
+                return ctx.Event.Include("Trainers").ToList().Take(amound);
             }
         }
 
@@ -49,7 +49,7 @@ namespace DAL.Managers
         {
             using (var ctx = new OSGContext())
             {
-                return ctx.Event.FirstOrDefault(_event => _event.Id == Id);
+                return ctx.Event.Include("Trainers").FirstOrDefault(_event => _event.Id == Id);
             }
         }
 

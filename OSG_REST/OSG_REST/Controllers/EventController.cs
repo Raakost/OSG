@@ -9,6 +9,7 @@ using DAL.DomainModel;
 using OSG_DTO;
 using OSG_DTO.Converter;
 using OSG_REST.Controllers.IController;
+using System.Runtime.InteropServices;
 
 namespace OSG_REST.Controllers
 {
@@ -22,9 +23,10 @@ namespace OSG_REST.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<EventDTO> ReadAll(int amound = 10)
+        [Route("api/Event/GetByAmound/{amound}")]
+        public IEnumerable<EventDTO> ReadAll(int amound)
         {
-            return new EventConverter().ConvertListToDTO(new Facade().GetEventManager().ReadAll(amound));
+            return new EventConverter().ConvertListToDTO(new Facade().GetEventManager().ReadAll(5));
         }
 
         [HttpGet]

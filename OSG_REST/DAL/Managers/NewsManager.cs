@@ -41,7 +41,7 @@ namespace DAL.Managers
         {
             using (var ctx = new OSGContext())
             {
-                return ctx.News.ToList();
+                return ctx.News.Include("Comments").ToList().Take(amound);
             }
         }
 
@@ -50,7 +50,7 @@ namespace DAL.Managers
         {
             using (var ctx = new OSGContext())
             {
-                return ctx.News.FirstOrDefault(news => news.Id == Id);
+                return ctx.News.Include("Comments").FirstOrDefault(news => news.Id == Id);
             }
         }
 

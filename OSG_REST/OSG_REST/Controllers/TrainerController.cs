@@ -4,11 +4,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.ModelBinding;
 using DAL;
 using DAL.DomainModel;
 using OSG_DTO;
 using OSG_DTO.Converter;
 using OSG_REST.Controllers.IController;
+using System.Runtime.InteropServices;
 
 namespace OSG_REST.Controllers
 {
@@ -22,7 +24,7 @@ namespace OSG_REST.Controllers
         }
 
         [HttpGet]
-        [Route("GetAll")]
+        [Route("api/Trainer/GetByAmound/{amound}")]
         public IEnumerable<TrainerDTO> ReadAll(int amound = 10)
         {
             return new TrainerConverter().ConvertListToDTO(new Facade().GetTrainerManager().ReadAll(amound));

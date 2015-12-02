@@ -13,7 +13,7 @@ namespace Gateway.Services
     {
         private string HttpLink = "http://localhost:26887/api/";
         private string ControllerName = "event/";
-        public Event Add(Event model)
+        public Event Create(Event model)
         {
             using (var client = new HttpClient())
             {
@@ -33,12 +33,12 @@ namespace Gateway.Services
             }
         }
 
-        public IEnumerable<Event> ReadAll()
+        public IEnumerable<Event> ReadAll(int amound = 10)
         {
             using (var client = new HttpClient())
             {
                 HttpResponseMessage response =
-                    client.GetAsync(HttpLink + ControllerName).Result;
+                    client.GetAsync(HttpLink + ControllerName + "/GetByAmound/" + amound).Result;
                 return response.Content.ReadAsAsync<IEnumerable<Event>>().Result;
             }
         }

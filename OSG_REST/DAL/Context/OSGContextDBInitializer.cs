@@ -23,6 +23,24 @@ namespace DAL.Context
                 PhoneNo = "22334455",
             });
 
+            context.Trainer.Add(new Trainer()
+            {
+                Id = 1,
+                FirstName = "Test Name 1",
+                LastName = "Test Last Name 1",
+                Email = "Test1@mail.com",
+                PhoneNo = "11223344",
+            });
+
+            context.Trainer.Add(new Trainer()
+            {
+                Id = 1,
+                FirstName = "Test First Name 2",
+                LastName = "Test Last Name 2",
+                Email = "Test2@mail.com",
+                PhoneNo = "99887766",
+            });
+
             context.News.Add(new News()
             {
                 Id = 1,

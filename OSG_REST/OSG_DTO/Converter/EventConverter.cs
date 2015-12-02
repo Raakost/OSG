@@ -65,6 +65,10 @@ namespace OSG_DTO.Converter
                     });
                 }
             }
+            else
+            {
+                model.Trainers = new List<Trainer>();
+            }
             return model;
         }
     }

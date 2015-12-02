@@ -58,6 +58,10 @@ namespace OSG_DTO.Converter
                     });
                 }
             }
+            else
+            {
+                model.Comments = new List<Comment>();
+            }
             return model;
         }
     }

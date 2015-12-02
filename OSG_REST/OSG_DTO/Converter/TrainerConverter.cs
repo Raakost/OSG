@@ -64,6 +64,10 @@ namespace OSG_DTO.Converter
                     });
                 }
             }
+            else
+            {
+                model.Events = new List<Event>();
+            }
             return model;
         }
     }

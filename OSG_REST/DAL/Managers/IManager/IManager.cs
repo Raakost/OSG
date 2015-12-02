@@ -11,7 +11,7 @@ namespace DAL.Managers.IManager
 
         T Create(T model);
         T ReadByID(int Id);
-        IEnumerable<T> ReadAll(int amound = 10);
+        IEnumerable<T> ReadAll(int amound);
         T Update(T model);
         Boolean Delete(T model);
 
