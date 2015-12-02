@@ -188,6 +188,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Admin\AdminController.cs" />
+    <Compile Include="Controllers\Admin\AdminEventController.cs" />
+    <Compile Include="Controllers\Admin\AdminNewsController.cs" />
+    <Compile Include="Controllers\Admin\AdminTrainerController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -210,6 +214,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Pictures\Facebook-Like-Button3.png" />
+    <Content Include="Content\Pictures\FrontPage.jpg" />
     <Content Include="Content\Pictures\FrontPageGirlCuteButt.jpg" />
     <Content Include="Content\Pictures\oldschoolgym logo.png" />
     <Content Include="favicon.ico" />
@@ -268,11 +274,13 @@
     <Content Include="Views\Events\Calendar.cshtml" />
     <Content Include="Views\Events\EventInfoPane.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\Admin\" />
-    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Admin\AdminEvent\" />
+    <Folder Include="Views\Admin\AdminNews\" />
+    <Folder Include="Views\Admin\AdminTrainer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

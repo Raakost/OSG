@@ -28,6 +28,34 @@ namespace OSG.Controllers
                 Description = "This is the first event, EVER!!",
                 Date = new DateTime(2015, 12, 02)
             });
+            events.Add(new Event()
+            {
+                Id = 3,
+                Title = "ThirdEvent",
+                Description = "This is the first event, EVER!!",
+                Date = new DateTime(2015, 12, 04)
+            });
+            events.Add(new Event()
+            {
+                Id = 4,
+                Title = "ThirdEvent",
+                Description = "This is the first event, EVER!!",
+                Date = new DateTime(2015, 12, 04)
+            });
+            events.Add(new Event()
+            {
+                Id = 5,
+                Title = "ThirdEvent",
+                Description = "This is the first event, EVER!!",
+                Date = new DateTime(2015, 12, 04)
+            });
+            events.Add(new Event()
+            {
+                Id = 6,
+                Title = "ThirdEvent",
+                Description = "This is the first event, EVER!!",
+                Date = new DateTime(2015, 12, 01)
+            });
         }
         // GET: Events
         public ActionResult Index(EventIndex viewModel)
