@@ -37,7 +37,7 @@ namespace DAL.Managers
             }
         }
 
-        public IEnumerable<News> ReadAll()
+        public IEnumerable<News> ReadAll(int amound = 10)
         {
             using (var ctx = new OSGContext())
             {

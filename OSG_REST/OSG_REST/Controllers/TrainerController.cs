@@ -22,9 +22,10 @@ namespace OSG_REST.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<TrainerDTO> ReadAll()
+        [Route("GetAll")]
+        public IEnumerable<TrainerDTO> ReadAll(int amound = 10)
         {
-            return new TrainerConverter().ConvertListToDTO(new Facade().GetTrainerManager().ReadAll());
+            return new TrainerConverter().ConvertListToDTO(new Facade().GetTrainerManager().ReadAll(amound));
         }
 
         [HttpGet]

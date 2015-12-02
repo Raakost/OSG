@@ -28,9 +28,9 @@ namespace OSG_REST.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<NewsDTO> ReadAll()
+        public IEnumerable<NewsDTO> ReadAll(int amound = 10)
         {
-            return new NewsConverter().ConvertListToDTO(new Facade().GetNewsManager().ReadAll());
+            return new NewsConverter().ConvertListToDTO(new Facade().GetNewsManager().ReadAll(amound));
         }
 
         [HttpPut]

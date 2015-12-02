@@ -24,9 +24,9 @@ namespace OSG_REST.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<CommentDTO> ReadAll()
+        public IEnumerable<CommentDTO> ReadAll(int amound = 10)
         {
-            return new CommentConverter().ConvertListToDTO(new Facade().GetCommentManager().ReadAll());
+            return new CommentConverter().ConvertListToDTO(new Facade().GetCommentManager().ReadAll(amound));
         }
 
         [HttpPut]

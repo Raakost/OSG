@@ -22,9 +22,9 @@ namespace OSG_REST.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<EventDTO> ReadAll()
+        public IEnumerable<EventDTO> ReadAll(int amound = 10)
         {
-            return new EventConverter().ConvertListToDTO(new Facade().GetEventManager().ReadAll());
+            return new EventConverter().ConvertListToDTO(new Facade().GetEventManager().ReadAll(amound));
         }
 
         [HttpGet]
