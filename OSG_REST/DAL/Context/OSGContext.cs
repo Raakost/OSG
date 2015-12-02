@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using DAL.DomainModel;
 
 namespace DAL.Context
@@ -15,7 +10,7 @@ namespace DAL.Context
         public DbSet<Trainer> Trainer { get; set; }
         public DbSet<Comment> Comment { get; set; }
 
-        //If OSG db doesn't exist, it will be created using the dbInitializer.
+        // If DB or DbName database doesn't exist, it will be created using the dbInitializer.
         public OSGContext() : base("OSG")
         {
             Database.SetInitializer(new OSGContextDBInitializer());
