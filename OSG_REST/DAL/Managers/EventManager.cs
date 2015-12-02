@@ -64,6 +64,7 @@ namespace DAL.Managers
                     eventToUpdate.Description = model.Description;
                     eventToUpdate.Title = model.Title;
                     eventToUpdate.Trainers = model.Trainers.ToList();
+                    ctx.SaveChanges();
                     return eventToUpdate;
                 }
             }

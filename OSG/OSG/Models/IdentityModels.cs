@@ -29,5 +29,7 @@ namespace OSG.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Gateway.DomainModel.News> News { get; set; }
     }
 }

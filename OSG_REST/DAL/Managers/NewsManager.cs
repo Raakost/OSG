@@ -65,6 +65,7 @@ namespace DAL.Managers
                     newsToUpdate.Description = model.Description;
                     newsToUpdate.Picture = model.Picture;
                     newsToUpdate.Title = model.Title;
+                    ctx.SaveChanges();
                     return newsToUpdate;
                 }
                 return model;

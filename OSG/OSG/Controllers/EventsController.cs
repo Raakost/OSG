@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using OSG.Models;
+using Gateway.DomainModel;
 using OSG.Models.ViewModel;
 
 namespace OSG.Controllers
