@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Gateway.DomainModel;
+using Gateway.Facade;
 using OSG.Models.ViewModel;
 
 namespace OSG.Controllers
@@ -11,6 +12,7 @@ namespace OSG.Controllers
     public class EventsController : Controller
     {
         List<Event> events = new List<Event>();
+        Facade facade = new Facade();
 
         public EventsController()
         {
@@ -83,6 +85,44 @@ namespace OSG.Controllers
         public ActionResult EventInfoPane(int? id)
         {
             return PartialView(id);
+        }
+
+        public ActionResult Options()
+        {
+            return View(facade.GetEventGateway().ReadAll());
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View(new Event());
+        }
+
+        [HttpPost]
+        public ActionResult Create(Event anEvent)
+        {
+            facade.GetEventGateway().Create(new Event()
+            {
+                Id = anEvent.Id,
+                Date = anEvent.Date,
+                Title = anEvent.Title,
+                Description = anEvent.Description
+            });
+            return RedirectToAction("Options", "Events");
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            Event anEvent = facade.GetEventGateway().ReadById(id);
+            return View(anEvent);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Event anEvent)
+        {
+            facade.GetEventGateway().Update(anEvent);
+            return RedirectToAction("Options", "Events");
         }
     }
 }

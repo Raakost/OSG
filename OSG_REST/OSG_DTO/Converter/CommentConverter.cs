@@ -52,6 +52,10 @@ namespace OSG_DTO.Converter
                     Title = item.News.Title
                 };
             }
+            else
+            {
+                model.News = new News();
+            }
             return model;
         }
     }

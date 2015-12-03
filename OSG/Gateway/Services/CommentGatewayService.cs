@@ -14,7 +14,7 @@ namespace Gateway.Services
         private string HttpLink = "http://localhost:26887/api/";
         private string ControllerName = "comment/";
 
-        public Comment Add(Comment model)
+        public Comment Create(Comment model)
         {
             using (var client = new HttpClient())
             {
@@ -34,12 +34,12 @@ namespace Gateway.Services
             }
         }
 
-        public IEnumerable<Comment> ReadAll()
+        public IEnumerable<Comment> ReadAll(int amound = 10)
         {
             using (var client = new HttpClient())
             {
                 HttpResponseMessage response =
-                    client.GetAsync(HttpLink + ControllerName).Result;
+                    client.GetAsync(HttpLink + ControllerName + "/GetByAmound/" + amound).Result;
                 return response.Content.ReadAsAsync<IEnumerable<Comment>>().Result;
             }
         }

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Http;
+using System.Runtime.InteropServices;
 
 namespace OSG_REST.Controllers.IController
 {
@@ -12,7 +9,7 @@ namespace OSG_REST.Controllers.IController
       
         T Create(T dto);
         T ReadById(int id);
-        IEnumerable<T> ReadAll();
+        IEnumerable<T> ReadAll(int amound);
         T Update(int id, T dto);
         Boolean Delete(int id);
 

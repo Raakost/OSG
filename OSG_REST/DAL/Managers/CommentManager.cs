@@ -37,11 +37,11 @@ namespace DAL.Managers
             }
         }
 
-        public IEnumerable<Comment> ReadAll()
+        public IEnumerable<Comment> ReadAll(int amound = 10)
         {
             using (var ctx = new OSGContext())
             {
-                return ctx.Comment.Include("News").ToList();
+                return ctx.Comment.Include("News").ToList().Take(amound);
             }
         }
 
@@ -57,7 +57,7 @@ namespace DAL.Managers
         {
             using (var ctx = new OSGContext())
             {
-                var commentToUpdate = ctx.Comment.Include("News").FirstOrDefault(comment => comment.Id == model.Id);
+                var commentToUpdate = ctx.Comment.FirstOrDefault(comment => comment.Id == model.Id);
                 if (commentToUpdate != null)
                 {
                     commentToUpdate.Name = model.Name;
