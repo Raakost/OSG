@@ -5,8 +5,8 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
     margin-top: 135px;
 }
 
@@ -42,9 +42,13 @@ textarea {
 }
 
     .frontpage_footer.row {
-        margin-right: -5px;
-        margin-left: -16px;
+        margin-right: 0px;
+        margin-left: 0px;
     }
+
+.contact, .openinghours, .embedded_map {
+    padding: 0px;
+}
 
 .fb-like {
     margin-top: 18px;
@@ -103,6 +107,7 @@ li.logo {
     padding: 0px;
 }
 
+
 /*---------------calendar section, modal events---------------*/
 .month-header {
     text-transform: capitalize;
@@ -157,14 +162,15 @@ li.logo {
     opacity: 0.4;
 }
 
-/*---------------news section "jumbotron"------------------------------*/
+
+/*---------------news section------------------------------*/
 .news_jumbo_img {
     border-radius: 2px;
 }
 
 .left_news, .center_news {
     margin-right: 125px;
-    margin-left: -3px;
+    margin-left: 0px;
 }
 
     .left_news img, .center_news img, .right_news img {
