@@ -1,12 +1,36 @@
-﻿body {
+﻿html {
+    text-shadow: 0px 4px 6px black;
+}
+
+#bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -100;
+}
+
+    #bg img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        min-width: 50%;
+        min-height: 50%;
+    }
+
+body {
     background-color: #151414;
     color: #999999;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 2%;
-    padding-right: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
     margin-top: 135px;
 }
 
@@ -28,11 +52,12 @@ textarea {
 /*---------------front page - set size on img in carousel---------------*/
 #myCarousel {
     width: 100%;
+    box-shadow: 0px 4px 6px black;
 }
 
     #myCarousel img {
         width: 100%;
-        border-radius: 3px;
+        border-radius: 4px;
     }
 
 
@@ -72,8 +97,10 @@ textarea {
 }
 
 hr {
-    border: 1px solid #2F2F2F;
+    border: 1px solid black;
     margin-bottom: 5px;
+    text-shadow: 0px 4px 6px black;
+    opacity: 0.4;
 }
 
 
@@ -84,8 +111,10 @@ hr {
 }
 
 .navbar-inverse {
-    background-color: #080808;
+    background-color: #000000;
     border-color: #2F2F2F;
+    opacity: 0.7;
+    box-shadow: 0px 4px 6px black;
 }
 
 .navbar-nav li {
@@ -114,43 +143,72 @@ li.logo {
 }
 
 .table-calendar tr {
-    border-bottom: 1px solid #999999;
+    border: 1px solid rgba(153, 153, 153, 0.19);
 }
 
-    .table-calendar tr:last-child {
+/*.table-calendar tr:last-child {
         border-bottom: none;
-    }
+    }*/
 
-.table-calendar thead tr:last-child {
+/*.table-calendar thead tr:last-child {
     border-bottom: 1px solid #999999;
-}
+}*/
 
 .table-calendar thead td {
     height: 12px;
     text-align: center;
+    font-weight: bold;
 }
 
 .table-calendar td {
-    border-left: 1px solid #999999;
+    border: 1px solid rgba(153, 153, 153, 0.19);
     height: 95px;
     width: 160px;
     position: relative;
 }
 
-    .table-calendar td:first-child {
+/*.table-calendar td:first-child {
         border-left: none;
-    }
+    }*/
 
 .table-calendar .date {
     position: absolute;
     top: -4px;
     margin: 2px;
     left: 4px;
+    z-index: 500;
+}
+
+.modal-dialog {
+    margin-top: 150px;
+}
+
+.modal-content {
+    opacity: 0.8;
+    background-color: #999999;
+}
+
+.modal-header {
+    border-bottom: 1px solid black;
+}
+
+    .modal-header button {
+        color: #B50202;
+        opacity: 1;
+    }
+
+.modal-title, .modal-body {
+    color: black;
+    text-shadow: none;
+}
+
+.modal-footer {
+    border-top: none;
 }
 
 .events {
     list-style-type: none;
-    padding-left: 5px;
+    padding: 0px 5px;
 }
 
 .trigger-button {
@@ -159,22 +217,26 @@ li.logo {
     background-color: #884146;
     border-radius: 4px;
     border: 0px outset buttonface;
-    opacity: 0.4;
+    opacity: 0.7;
+    width: 100%;
+    box-shadow: 0px 4px 6px black;
 }
 
 
 /*---------------news section------------------------------*/
 .news_jumbo_img {
-    border-radius: 2px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px black;
 }
 
 .left_news, .center_news {
-    margin-right: 125px;
+    margin-right: 124px;
     margin-left: 0px;
 }
 
     .left_news img, .center_news img, .right_news img {
-        border-radius: 2px;
+        border-radius: 4px;
+        box-shadow: 0px 4px 6px black;
     }
 
 .left_news, .center_news, .right_news {
