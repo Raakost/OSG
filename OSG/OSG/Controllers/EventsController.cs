@@ -20,7 +20,7 @@ namespace OSG.Controllers
             {
                 Id = 1,
                 Title = "First Event",
-                Description = "This is the first event, EVER!!",
+                Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ex hendrerit, tincidunt risus porttitor, imperdiet lacus. Curabitur sem lacus, pulvinar eu vehicula in, dignissim ac lacus. Donec porttitor lobortis erat. Sed lacinia vitae est ut vehicula. Integer sit amet turpis eu enim lacinia tincidunt ut in nisi. Vivamus ultrices consequat magna eu rhoncus. Proin et hendrerit nibh.",
                 Date = new DateTime(2015, 12, 02)
             });
             events.Add(new Event()

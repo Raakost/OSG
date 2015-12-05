@@ -24,7 +24,7 @@
 
 body {
     background-color: #151414;
-    color: #999999;
+    color: #E0E0E0;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -49,7 +49,7 @@ textarea {
 }
 
 
-/*---------------front page - set size on img in carousel---------------*/
+/*front page*/
 #myCarousel {
     width: 100%;
     box-shadow: 0px 4px 6px black;
@@ -60,8 +60,12 @@ textarea {
         border-radius: 4px;
     }
 
+.frontpage_header {
+    font-style: italic;
+}
 
-/*---------------front page footer section - contact, opening hours, embedded map and FB like and share---------------*/
+
+/*footer section*/
 .frontpage_footer {
     margin-bottom: 50px;
 }
@@ -104,7 +108,7 @@ hr {
 }
 
 
-/*---------------shared layout page and nav bar with logo---------------*/
+/*shared layout, nav bar, logo*/
 .logo img {
     width: 100px;
     margin-right: 80px;
@@ -123,13 +127,14 @@ hr {
     font-weight: bolder;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover {
-    color: #A20C17;
+.navbar-inverse .navbar-nav > li > a {
+    margin-right: 60px;
+    color: #E0E0E0;
 }
 
-.navbar-nav a {
-    margin-right: 60px;
-}
+    .navbar-inverse .navbar-nav > li > a:hover {
+        color: #82AF1A;
+    }
 
 li.logo {
     margin-top: 0px;
@@ -137,7 +142,7 @@ li.logo {
 }
 
 
-/*---------------calendar section, modal events---------------*/
+/*calendar section, modal events*/
 .month-header {
     text-transform: capitalize;
 }
@@ -184,26 +189,42 @@ li.logo {
 }
 
 .modal-content {
-    opacity: 0.8;
-    background-color: #999999;
+    opacity: 0.9;
+    border: 1px solid #191919;
+    border-radius: 2px;
 }
 
 .modal-header {
     border-bottom: 1px solid black;
+    background-color: #637E24;
 }
 
     .modal-header button {
-        color: #B50202;
+        color: #884146;
         opacity: 1;
+        border: 0px outset buttonface;
+        text-shadow: none;
     }
 
-.modal-title, .modal-body {
+.close_btn {
+    background-color: #E0E0E0;
+    color: black;
+    border: 0px outset buttonface;
+}
+
+.modal-title {
     color: black;
     text-shadow: none;
 }
 
+.modal-body {
+    background-color: #191919;
+}
+
 .modal-footer {
+    margin-top: 0px;
     border-top: none;
+    background-color: #191919;
 }
 
 .events {
@@ -214,19 +235,23 @@ li.logo {
 .trigger-button {
     padding: 2px 4px;
     margin-bottom: 2px;
-    background-color: #884146;
+    background-color: #82AF1A;
     border-radius: 4px;
     border: 0px outset buttonface;
-    opacity: 0.7;
+    opacity: 0.6;
     width: 100%;
     box-shadow: 0px 4px 6px black;
 }
 
 
-/*---------------news section------------------------------*/
+/*news section*/
 .news_jumbo_img {
     border-radius: 4px;
     box-shadow: 0px 4px 6px black;
+}
+
+.news_jumbo_header {
+    padding-left: 15px;
 }
 
 .left_news, .center_news {
@@ -237,8 +262,47 @@ li.logo {
     .left_news img, .center_news img, .right_news img {
         border-radius: 4px;
         box-shadow: 0px 4px 6px black;
+        min-height: 247px;
+        min-width: 247px;
+        max-height: 247px;
+        max-width: 247px;
     }
 
 .left_news, .center_news, .right_news {
     padding: 0px;
+}
+
+/*price section*/
+.price_content_wrapper {
+    padding: 0px;
+}
+
+.price_img_wrapper {
+    padding: 0px;
+}
+
+    .price_img_wrapper img {
+        width: 100%;
+        padding-right: 0px;
+        border-radius: 4px;
+    }
+
+.price_table_wrapper {
+    padding: 0px;
+    padding-left: 10px;
+}
+
+    .price_table_wrapper td {
+        padding-right: 0px;
+        padding-bottom: 13px;
+        width: 100%;
+    }
+
+    .price_table_wrapper h4 {
+        margin-top: 0px;
+    }
+
+.price {
+    text-align: right;
+    /*padding-left: 65px;*/
 }

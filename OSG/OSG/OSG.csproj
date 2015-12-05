@@ -195,6 +195,7 @@
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MemberPriceController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -217,6 +218,7 @@
     <Content Include="Content\Pictures\oldschoolgym logo.png" />
     <Content Include="Content\Pictures\oprydning.jpg" />
     <Content Include="Content\Pictures\oprydning_2.jpg" />
+    <Content Include="Content\Pictures\PricePage.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -281,6 +283,7 @@
     <Content Include="Views\Events\Options.cshtml" />
     <Content Include="Views\Events\Create.cshtml" />
     <Content Include="Views\Events\Edit.cshtml" />
+    <Content Include="Views\MemberPrice\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
