@@ -4,6 +4,10 @@ namespace DAL.DomainModel
 {
     public class Trainer
     {
+        public Trainer()
+        {
+            Events = new List<Event>();
+        }
         public int Id { get; set; }
 
         public string FirstName { get; set; }

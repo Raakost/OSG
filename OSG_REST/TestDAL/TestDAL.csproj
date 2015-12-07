@@ -70,6 +70,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCommentManager.cs" />
+    <Compile Include="TestEventManager.cs" />
+    <Compile Include="TestNewsManager.cs" />
     <Compile Include="TestTrainerManager.cs" />
   </ItemGroup>
   <ItemGroup>
