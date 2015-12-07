@@ -57,5 +57,12 @@ namespace OSG.Controllers
             facade.GetNewsGateway().Update(news);
             return RedirectToAction("Options", "News");
         }
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            facade.GetNewsGateway().Delete(id);
+            return RedirectToAction("Options", "News");
+        }
     }
 }

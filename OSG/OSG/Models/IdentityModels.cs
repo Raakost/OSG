@@ -33,5 +33,7 @@ namespace OSG.Models
         public System.Data.Entity.DbSet<Gateway.DomainModel.News> News { get; set; }
 
         public System.Data.Entity.DbSet<Gateway.DomainModel.Event> Events { get; set; }
+
+        public System.Data.Entity.DbSet<Gateway.DomainModel.Trainer> Trainers { get; set; }
     }
 }

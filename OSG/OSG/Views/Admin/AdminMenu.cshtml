@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "AdminMenu";
+}
+
+<h2>AdminMenu</h2>
+
+<div id="menu">
+    <ul>
+        <li><a href="#">@Html.ActionLink("News Options", "Options", new { controller = "News" })</a></li>
+        <li><a href="#">@Html.ActionLink("Event Options", "Options", new { controller = "Events" })</a></li>
+        <li><a href="#">@Html.ActionLink("Trainer Options", "Options", new { controller = "Trainer" })</a></li>
+    </ul>
+</div>

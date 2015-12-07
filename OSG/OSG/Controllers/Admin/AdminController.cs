@@ -14,5 +14,10 @@ namespace OSG.Controllers.Admin
             return View();
         }
 
+        public ActionResult AdminMenu()
+        {
+            return View();
+        }
+
     }
 }

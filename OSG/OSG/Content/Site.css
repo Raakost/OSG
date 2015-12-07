@@ -308,3 +308,7 @@ li.logo {
 .bootcamp, .personlig_træning1, .personlig_træning2 {
     text-align: justify;
 }
+
+.deleteForm {
+    display: inline;
+}

@@ -23,12 +23,12 @@ namespace Gateway.Services
             }
         }
 
-        public bool Delete(Event model)
+        public bool Delete(int id)
         {
             using (var client = new HttpClient())
             {
                 HttpResponseMessage response =
-                    client.DeleteAsync(HttpLink + ControllerName + model.Id).Result;
+                    client.DeleteAsync(HttpLink + ControllerName + id).Result;
                 return response.Content.ReadAsAsync<Boolean>().Result;
             }
         }
