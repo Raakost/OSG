@@ -26,7 +26,7 @@ namespace DAL.Context
             context.Trainer.Add(new Trainer()
             {
                 Id = 1,
-                FirstName = "Test Name 1",
+                FirstName = "Test First Name 1",
                 LastName = "Test Last Name 1",
                 Email = "Test1@mail.com",
                 PhoneNo = "11223344",

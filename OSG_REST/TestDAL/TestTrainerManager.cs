@@ -12,49 +12,43 @@ namespace TestDAL
         private Trainer _trainer2;
         private Trainer _trainer3;
         private TrainerManager _trainerManager;
+
         [SetUp]
         public void Init()
         {
             _trainerManager = new TrainerManager();
-
-            //_trainer1 is the same trainer as in the DBSeed, used here for testing
+            
             _trainer1 = new Trainer()
             {
-                Id = 1,
-                FirstName = "Mikkel",
-                LastName = "Madsen",
-                Email = "mikkel@mail.com",
-                PhoneNo = "22334455",
-                Description = "A description"
+                Id = 4,
+                FirstName = "Test FirstName 9",
+                LastName = "Test LastName 9",
+                Email = "Test9@mail.com",
+                PhoneNo = "99119911",
+                Description = "A description 9"
             };
 
             _trainer2 = new Trainer()
             {
-                FirstName = "Rasmus"
+                FirstName = "Test FirstName 10"
             };
             _trainer3 = new Trainer()
             {
-                Id = 3,
-                FirstName = "Kim"
+                Id = 4,
+                FirstName = "Test FirstName 11"
             };
 
         }
 
-        //A test of how to do tests.
-        //[Test]
-        //public void Test_Trainer_First_Name_Property()
-        //{
-        //    Assert.AreEqual("Mikkel", _trainerManager.ReadByID(_trainer1.Id).FirstName);
-        //}
-
         [Test]
         public void Test_ReadAll_In_TrainerManager()
         {
-            Assert.AreEqual(3, _trainerManager.ReadAll().Count());
-            var testTrainer = _trainerManager.Create(_trainer2);
+            Assert.AreEqual(3, _trainerManager.ReadAll(10).Count());
 
+            var testTrainer = _trainerManager.Create(_trainer2);
             Assert.AreEqual(_trainer2.Id, testTrainer.Id);
-            Assert.AreEqual(4, _trainerManager.ReadAll().Count());
+
+            Assert.AreEqual(4, _trainerManager.ReadAll(10).Count());
         }
 
         [Test]

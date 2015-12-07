@@ -37,7 +37,7 @@ namespace DAL.Managers
             }
         }
 
-        public IEnumerable<Trainer> ReadAll(int amound = 10)
+        public IEnumerable<Trainer> ReadAll(int amound)
         {
             using (var ctx = new OSGContext())
             {
