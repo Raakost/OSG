@@ -53,17 +53,13 @@ textarea {
 #myCarousel {
     width: 100%;
     box-shadow: 0px 4px 6px black;
+    margin-top: 20px;
 }
 
     #myCarousel img {
         width: 100%;
         border-radius: 4px;
     }
-
-.frontpage_header {
-    font-style: italic;
-}
-
 
 /*footer section*/
 .frontpage_footer {
@@ -110,8 +106,9 @@ hr {
 
 /*shared layout, nav bar, logo*/
 .logo img {
-    width: 100px;
-    margin-right: 80px;
+    width: 115px;
+    margin-right: 60px;
+    margin-left: 100px;
 }
 
 .navbar-inverse {
@@ -122,7 +119,7 @@ hr {
 }
 
 .navbar-nav li {
-    margin-top: 25px;
+    margin-top: 34px;
     font-size: 18px;
     font-weight: bolder;
 }
@@ -254,22 +251,23 @@ li.logo {
     padding-left: 15px;
 }
 
-.left_news, .center_news {
-    margin-right: 124px;
-    margin-left: 0px;
+.left_news, .center_news .left_news, .center_news, .right_news {
+    width: 33.33333333%;
 }
 
     .left_news img, .center_news img, .right_news img {
         border-radius: 4px;
         box-shadow: 0px 4px 6px black;
-        min-height: 247px;
-        min-width: 247px;
-        max-height: 247px;
-        max-width: 247px;
+        min-height: 100px;
+        min-width: 100px;
     }
 
 .left_news, .center_news, .right_news {
-    padding: 0px;
+    padding-left: 15px;
+}
+
+.news_text, .news_jumbo_text {
+    text-align: justify;
 }
 
 /*price section*/
@@ -305,4 +303,8 @@ li.logo {
 .price {
     text-align: right;
     /*padding-left: 65px;*/
+}
+
+.bootcamp, .personlig_træning1, .personlig_træning2 {
+    text-align: justify;
 }
