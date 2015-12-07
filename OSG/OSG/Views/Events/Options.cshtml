@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Gateway.DomainModel.Event>
+﻿@using OSG.Controllers
+@model IEnumerable<Gateway.DomainModel.Event>
 
 @{
     ViewBag.Title = "Options";
@@ -30,7 +31,11 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+
+            @using (Html.BeginForm("Delete", "Events", new { id = item.Id }, FormMethod.Post, new { @class = "deleteForm" }))
+            {
+                <button type="submit" class="btn-link">Delete</button>
+            }
         </td>
     </tr>
 }

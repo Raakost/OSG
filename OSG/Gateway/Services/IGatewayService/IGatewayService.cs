@@ -13,6 +13,6 @@ namespace Gateway.Services.IGatewayService
         IEnumerable<T> ReadAll(int amound);
         T ReadById(int id);
         T Update(T model);
-        bool Delete(T model);
+        bool Delete(int id);
     }
 }

@@ -5,6 +5,10 @@ namespace DAL.DomainModel
 {
     public class News
     {
+        public News()
+        {
+            Comments = new List<Comment>();
+        }
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public string Picture { get; set; }

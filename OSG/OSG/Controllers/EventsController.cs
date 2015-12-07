@@ -90,5 +90,12 @@ namespace OSG.Controllers
             facade.GetEventGateway().Update(anEvent);
             return RedirectToAction("Options", "Events");
         }
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            facade.GetEventGateway().Delete(id);
+            return RedirectToAction("Options", "Events");
+        }
     }
 }
