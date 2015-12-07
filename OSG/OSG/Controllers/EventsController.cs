@@ -16,48 +16,14 @@ namespace OSG.Controllers
 
         public EventsController()
         {
-            events.Add(new Event()
-            {
-                Id = 1,
-                Title = "First Event",
-                Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ex hendrerit, tincidunt risus porttitor, imperdiet lacus. Curabitur sem lacus, pulvinar eu vehicula in, dignissim ac lacus. Donec porttitor lobortis erat. Sed lacinia vitae est ut vehicula. Integer sit amet turpis eu enim lacinia tincidunt ut in nisi. Vivamus ultrices consequat magna eu rhoncus. Proin et hendrerit nibh.",
-                Date = new DateTime(2015, 12, 02)
-            });
-            events.Add(new Event()
-            {
-                Id = 2,
-                Title = "Second Event",
-                Description = "This is the first event, EVER!!",
-                Date = new DateTime(2015, 12, 02)
-            });
-            events.Add(new Event()
-            {
-                Id = 3,
-                Title = "ThirdEvent",
-                Description = "This is the first event, EVER!!",
-                Date = new DateTime(2015, 12, 04)
-            });
-            events.Add(new Event()
-            {
-                Id = 4,
-                Title = "ThirdEvent",
-                Description = "This is the first event, EVER!!",
-                Date = new DateTime(2015, 12, 04)
-            });
-            events.Add(new Event()
-            {
-                Id = 5,
-                Title = "ThirdEvent",
-                Description = "This is the first event, EVER!!",
-                Date = new DateTime(2015, 12, 04)
-            });
-            events.Add(new Event()
-            {
-                Id = 6,
-                Title = "ThirdEvent",
-                Description = "This is the first event, EVER!!",
-                Date = new DateTime(2015, 12, 01)
-            });
+            //events.Add(new Event()
+            //{
+            //    Id = 1,
+            //    Title = "First Event",
+            //    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ex hendrerit, tincidunt risus porttitor, imperdiet lacus. Curabitur sem lacus, pulvinar eu vehicula in, dignissim ac lacus. Donec porttitor lobortis erat. Sed lacinia vitae est ut vehicula. Integer sit amet turpis eu enim lacinia tincidunt ut in nisi. Vivamus ultrices consequat magna eu rhoncus. Proin et hendrerit nibh.",
+            //    Date = new DateTime(2015, 12, 02)
+            //});
+
         }
         // GET: Events
         public ActionResult Index(EventIndex viewModel)
@@ -78,7 +44,7 @@ namespace OSG.Controllers
         {
             var ec = new EventCalendar();
             ec.Month = month;
-            ec.Events = events;
+            ec.Events = facade.GetEventGateway().ReadByMonth(month);
             return PartialView(ec);
         }
 

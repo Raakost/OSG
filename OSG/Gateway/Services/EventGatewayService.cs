@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Gateway.Services.IGatewayService;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using Gateway.DomainModel;
 
 namespace Gateway.Services
@@ -60,6 +61,17 @@ namespace Gateway.Services
                 HttpResponseMessage response =
                     client.PutAsJsonAsync(HttpLink + ControllerName + model.Id, model).Result;
                 return response.Content.ReadAsAsync<Event>().Result;
+            }
+        }
+
+        public List<Event> ReadByMonth(DateTime month)
+        {
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response =
+                    client.GetAsync(HttpLink + ControllerName + "ReadByMonth/" + month).Result;
+                return response.Content.ReadAsAsync<List<Event>>().Result.ToList();
             }
         }
     }
