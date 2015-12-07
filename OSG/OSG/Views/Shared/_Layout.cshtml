@@ -9,15 +9,20 @@
 
 </head>
 <body>
-    <div id="fb-root"></div>
+    <div id="bg">
+        <img src="~/Content/Pictures/bg4.jpg" alt="">
+    </div>
+    <div id=" fb-root"></div>
     <script>
         (function (d, s, id) {
             var fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
-            var js = d.createElement(s); js.id = id;
+            var js = d.createElement(s);
+            js.id = id;
             js.src = "//connect.facebook.net/da_DK/sdk.js#xfbml=1&version=v2.5";
             fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
@@ -37,8 +42,8 @@
                     </li>
                     <li>@Html.ActionLink("Nyheder", "Index", "News")</li>
                     <li>@Html.ActionLink("Events", "Index", "Events")</li>
-                    <li>@Html.ActionLink("Medlemsskab/Priser", "Index", "MemberPrice")</li>
-                    <li>@Html.ActionLink("Personlige Trænere", "Index", "Trainer")</li>
+                    <li>@Html.ActionLink("Priser", "Index", "MemberPrice")</li>
+                    <li>@Html.ActionLink("Om os", "Index", "Trainer")</li>
 
                 </ul>
                 @*@Html.Partial("_LoginPartial")*@
@@ -101,14 +106,15 @@
                     <table>
                         <tr>
                             <td>
-                                <iframe width="330" height="200" frameborder="0" style="border: 0"
+                                <iframe width="350" height="200" frameborder="0" style="border: 0"
                                         src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJt4FCH9UgS0YROI6cgBEhp-0&key=AIzaSyBdyJRYWh1mzBHlLDgqbx0GQ1Zoj9RHR4M" allowfullscreen></iframe>
                             </td>
                         </tr>
                     </table>
-
+                    <div style="clear: both;"></div>
                 </div>
             </div>
+
         </footer>
     </div>
 
