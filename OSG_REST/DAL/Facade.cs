@@ -12,7 +12,7 @@ namespace DAL
     public class Facade
     {
         private IManager<Comment> _commentManager;
-        private IManager<Event> _eventManager;
+        private EventManager _eventManager;
         private IManager<News> _newsManager;
         private IManager<Trainer> _trainerManager;
 
@@ -25,7 +25,7 @@ namespace DAL
             return _commentManager;
         }
 
-        public IManager<Event> GetEventManager()
+        public EventManager GetEventManager()
         {
             if (_eventManager == null)
             {

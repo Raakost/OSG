@@ -48,7 +48,7 @@ namespace TestDAL
             // we test with ReadAll(3).
             Assert.AreEqual(amound, _trainerManager.ReadAll(amound).Count());
 
-            _trainer1 = _trainerManager.Create(_trainer1);
+            _trainer1 = _trainerManager.Create(_trainer2);
             //amound++;
             Assert.AreEqual(amound+1, _trainerManager.ReadAll(amound+1).Count());
         }
@@ -82,7 +82,7 @@ namespace TestDAL
         }
 
         [Test]
-        public void Test_Update_Trainer_After_Create()
+        public void Test_Update_Discription_Trainer_After_Create()
         {
             _trainerManager = new TrainerManager();
             var testDescription = "Create Description";
@@ -99,6 +99,26 @@ namespace TestDAL
             _trainer4 = _trainerManager.Update(_trainer4);
 
             Assert.AreEqual(_trainer4.Description, _trainerManager.ReadByID(_trainer4.Id).Description);
+        }
+
+        [Test]
+        public void Test_Update_Events_On_Trainer()
+        {
+            var _event =
+            new Event() {Title = "Test title", Id = 1};
+
+            _trainerManager = new TrainerManager();
+            var _trainer5 = _trainerManager.ReadByID(1);
+            Assert.AreEqual(_trainer5.Id, _trainerManager.ReadByID(_trainer5.Id).Id);
+
+            _trainer5.Events = new List<Event>() {_event};
+            _trainer5 = _trainerManager.Update(_trainer5);
+            Assert.AreEqual(_event.Id, _trainer5.Events[0].Id);
+
+            var _event1 = new Event() {Title = "Test title2", Id = 1};
+            _trainer5.Events = new List<Event>() {_event1};
+            _trainer5 = _trainerManager.Update(_trainer5);
+            Assert.AreEqual(_event1.Id, _trainer5.Events[0].Id);
         }
     }
 }

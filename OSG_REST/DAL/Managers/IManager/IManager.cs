@@ -14,6 +14,6 @@ namespace DAL.Managers.IManager
         IEnumerable<T> ReadAll(int amound);
         T Update(T model);
         Boolean Delete(T model);
-        IEnumerable<T> ReadByMonth(DateTime month);
+        //IEnumerable<T> ReadByMonth(DateTime month);
     }
 }
