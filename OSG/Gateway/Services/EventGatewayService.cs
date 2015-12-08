@@ -70,8 +70,8 @@ namespace Gateway.Services
             {
                 //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response =
-                    client.GetAsync(HttpLink + ControllerName + "ReadByMonth/" + month).Result;
-                return response.Content.ReadAsAsync<List<Event>>().Result.ToList();
+                    client.GetAsync(HttpLink + ControllerName + "?month=" + month.Year+"-"+month.Month+"-"+month.Day).Result;
+                return response.Content.ReadAsAsync<IEnumerable<Event>>().Result.ToList();
             }
         }
     }

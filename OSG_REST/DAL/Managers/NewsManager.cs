@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DAL.Context;
 using DAL.DomainModel;
 using DAL.Managers.IManager;
@@ -52,11 +50,6 @@ namespace DAL.Managers
             {
                 return ctx.News.Include("Comments").FirstOrDefault(news => news.Id == Id);
             }
-        }
-
-        public IEnumerable<News> ReadByMonth(DateTime month)
-        {
-            throw new NotImplementedException();
         }
 
         public News Update(News model)

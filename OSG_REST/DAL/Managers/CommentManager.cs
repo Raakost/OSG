@@ -51,11 +51,6 @@ namespace DAL.Managers
             }
         }
 
-        public IEnumerable<Comment> ReadByMonth(DateTime month)
-        {
-            throw new NotImplementedException();
-        }
-
         public Comment Update(Comment model)
         {
             using (var ctx = new OSGContext())

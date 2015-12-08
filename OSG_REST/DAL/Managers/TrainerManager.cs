@@ -53,11 +53,6 @@ namespace DAL.Managers
             }
         }
 
-        public IEnumerable<Trainer> ReadByMonth(DateTime month)
-        {
-            throw new NotImplementedException();
-        }
-
         public Trainer Update(Trainer model)
         {
             using (var ctx = new OSGContext())
