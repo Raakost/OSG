@@ -54,6 +54,11 @@ namespace DAL.Managers
             }
         }
 
+        public IEnumerable<News> ReadByMonth(DateTime month)
+        {
+            throw new NotImplementedException();
+        }
+
         public News Update(News model)
         {
             using (var ctx = new OSGContext())

@@ -26,7 +26,7 @@ namespace OSG_REST.Controllers
         [Route("api/Event/GetByAmound/{amound}")]
         public IEnumerable<EventDTO> ReadAll(int amound)
         {
-            return new EventConverter().ConvertListToDTO(new Facade().GetEventManager().ReadAll(5));
+            return new EventConverter().ConvertListToDTO(new Facade().GetEventManager().ReadAll(/*5*/ amound));
         }
 
         [HttpGet]
@@ -53,5 +53,13 @@ namespace OSG_REST.Controllers
             }
             return false;
         }
+
+        [HttpGet]
+        [Route("api/Event/ReadByMonth/{month}")]
+        public IEnumerable<EventDTO> ReadByMonth(DateTime month)
+        {
+            return new EventConverter().ConvertListToDTO(new Facade().GetEventManager().ReadByMonth(month));
+        }
+
     }
 }

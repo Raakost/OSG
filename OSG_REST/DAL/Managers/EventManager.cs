@@ -41,7 +41,7 @@ namespace DAL.Managers
         {
             using (var ctx = new OSGContext())
             {
-                return ctx.Event.Include("Trainers").ToList().Take(amound);
+                return ctx.Event.Include("Trainers").Take(amound).ToList();
             }
         }
 
@@ -70,5 +70,14 @@ namespace DAL.Managers
             }
             return model;
         }
+
+        public IEnumerable<Event> ReadByMonth(DateTime month)
+        {
+            using (var ctx = new OSGContext())
+            {
+                return ctx.Event.Include("Trainers").Where(x => x.Date.Month == month.Month && x.Date.Year == month.Year).ToList();
+            }
+        }
+
     }
 }
