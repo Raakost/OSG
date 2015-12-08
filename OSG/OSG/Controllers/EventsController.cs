@@ -11,46 +11,19 @@ namespace OSG.Controllers
 {
     public class EventsController : Controller
     {
-        List<Event> events = new List<Event>();
         Facade facade = new Facade();
 
-        public EventsController()
-        {
-            //events.Add(new Event()
-            //{
-            //    Id = 1,
-            //    Title = "First Event",
-            //    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ex hendrerit, tincidunt risus porttitor, imperdiet lacus. Curabitur sem lacus, pulvinar eu vehicula in, dignissim ac lacus. Donec porttitor lobortis erat. Sed lacinia vitae est ut vehicula. Integer sit amet turpis eu enim lacinia tincidunt ut in nisi. Vivamus ultrices consequat magna eu rhoncus. Proin et hendrerit nibh.",
-            //    Date = new DateTime(2015, 12, 02)
-            //});
-
-        }
         // GET: Events
-        public ActionResult Index(EventIndex viewModel)
+        public ActionResult Index(DateTime? month)
         {
-            if (viewModel == null)
+            if (!month.HasValue)
             {
-                viewModel = new EventIndex();
+                month = DateTime.Now;
             }
-
-            if (!viewModel.Month.HasValue)
-            {
-                viewModel.Month = DateTime.Now;
-            }
-            return View(viewModel);
-        }
-
-        public ActionResult Calendar(DateTime month)
-        {
             var ec = new EventCalendar();
-            ec.Month = month;
-            ec.Events = facade.GetEventGateway().ReadByMonth(month);
-            return PartialView(ec);
-        }
-
-        public ActionResult EventInfoPane(int? id)
-        {
-            return PartialView(id);
+            ec.Month = month.Value;
+            ec.Events = facade.GetEventGateway().ReadByMonth(month.Value);
+            return View(ec);
         }
 
         public ActionResult Options()

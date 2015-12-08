@@ -8,7 +8,7 @@ namespace DAL.DomainModel
     {
         public Comment()
         {
-            News = new News();
+            //News = new News();
         }
         [Key]
         [DataMember]

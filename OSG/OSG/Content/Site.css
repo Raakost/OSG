@@ -252,24 +252,43 @@ li.logo {
     padding-left: 15px;
 }
 
-.left_news, .center_news .left_news, .center_news, .right_news {
-    width: 33.33333333%;
-}
-
-    .left_news img, .center_news img, .right_news img {
-        border-radius: 4px;
-        box-shadow: 0px 4px 6px black;
-        min-height: 100px;
-        min-width: 100px;
-    }
-
-.left_news, .center_news, .right_news {
-    padding-left: 15px;
-}
-
-.news_text, .news_jumbo_text {
+.news_jumbo_text {
     text-align: justify;
 }
+
+.news_thumbnail {
+    border: none;
+    padding: 0px;
+    background-color: transparent;
+}
+
+    .news_thumbnail h3 {
+        color: #E0E0E0 !important;
+    }
+
+    .news_thumbnail img {
+        border-radius: 4px;
+    }
+
+.news_thumb_wrapper {
+    padding: 0px;
+    box-sizing: border-box;
+    padding-bottom: 40px;
+}
+
+    .news_thumb_wrapper:nth-child(3n+1) {
+        padding-right: 25px;
+    }
+
+    .news_thumb_wrapper:nth-child(3n+2) {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
+    .news_thumb_wrapper:nth-child(3n+3) {
+        padding-left: 25px;
+    }
+
 
 /*price section*/
 .price_content_wrapper {

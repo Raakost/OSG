@@ -16,16 +16,21 @@ namespace DAL.Context
         {
 
             //Trainers
-            var event1 = new Event() {Id = 1, Description = "Disc", Title = "Title", Date = DateTime.Now};
+            var event1 = new Event()
+            {
+                Id = 1,
+                Description = description,
+                Title = "Event with trainer",
+                Date = DateTime.Now
+            };
             event1 = context.Event.Add(event1);
             var trainer1 = new Trainer()
             {
-                Id = 1,
                 FirstName = "Mikkel",
                 LastName = "Madsen",
                 Email = "mikkel@mail.com",
                 PhoneNo = "22334455",
-                Events = new List<Event>() { event1}
+                Events = new List<Event>() { event1 }
             };
 
             context.Trainer.Attach(trainer1);
@@ -33,16 +38,13 @@ namespace DAL.Context
 
             context.Trainer.Add(new Trainer()
             {
-                Id = 1,
                 FirstName = "Test First Name 1",
                 LastName = "Test Last Name 1",
                 Email = "Test1@mail.com",
                 PhoneNo = "11223344",
             });
-
             context.Trainer.Add(new Trainer()
             {
-                Id = 1,
                 FirstName = "Test First Name 2",
                 LastName = "Test Last Name 2",
                 Email = "Test2@mail.com",
@@ -52,27 +54,95 @@ namespace DAL.Context
             //News
             context.News.Add(new News()
             {
-                Id = 1,
                 Title = "Lorem Ipsum",
                 Description = description,
+                Picture = "/Content/Pictures/oprydning.jpg",
+                Date = new DateTime(2015, 12, 01)
+
+            });
+            context.News.Add(new News()
+            {
+                Title = "Lorem Ipsum",
+                Description = description,
+                Picture = "/Content/Pictures/maskine.jpg",
+                Date = new DateTime(2015, 12, 02)
+            });
+            context.News.Add(new News()
+            {
+                Title = "Lorem Ipsum",
+                Description = description,
+                Picture = "/Content/Pictures/oprydning_2.jpg",
+                Date = new DateTime(2015, 12, 03)
+            });
+            context.News.Add(new News()
+            {
+                Title = "Lorem Ipsum",
+                Description = description,
+                Picture = "/Content/Pictures/maskine2.jpg",
+                Date = new DateTime(2015, 12, 04)
+            });
+            context.News.Add(new News()
+            {
+                Title = "Lorem Ipsum",
+                Description = description,
+                Picture = "/Content/Pictures/maskine.jpg",
+                Date = new DateTime(2015, 12, 05)
+            });
+            context.News.Add(new News()
+            {
+                Title = "Lorem Ipsum",
+                Description = description,
+                Picture = "/Content/Pictures/oprydning_2.jpg",
+                Date = new DateTime(2015, 12, 06)
+            });
+            context.News.Add(new News()
+            {
+                Title = "Lorem Ipsum",
+                Description = description,
+                Picture = "/Content/Pictures/oprydning_2.jpg",
+                Date = new DateTime(2015, 12, 07)
+            });
+            context.News.Add(new News()
+            {
+                Title = "Lorem Ipsum",
+                Description = description,
+                Picture = "/Content/Pictures/oprydning.jpg",
+                Date = new DateTime(2015, 12, 08)
+            });
+            context.News.Add(new News()
+            {
+                Title = "Lorem Ipsum",
+                Description = description,
+                Picture = "/Content/Pictures/maskine.jpg",
+                Date = new DateTime(2015, 12, 09)
             });
 
             //Events
             context.Event.Add(new Event()
             {
-                Id = 1,
-                Description = "Test Discription 1",
-                Title = "Test event title 1"
+                Description = description,
+                Title = "Event title",
+                Date = new DateTime(2015, 12, 05)
             });
 
-            //Comments
-            context.Comment.Add(new Comment()
+            context.Event.Add(new Event()
             {
-                Id = 1,
-                Name = "Test comment name 1",
-                CommentText = "Test comment text"
+                Description = description,
+                Title = "Another event",
+                Date = new DateTime(2015, 12, 13)
             });
-
+            context.Event.Add(new Event()
+            {
+                Description = "Happy birthday baby Jeebus",
+                Title = "Christmas Event! ",
+                Date = new DateTime(2015, 12, 24)
+            });
+            context.Event.Add(new Event()
+            {
+                Description = description,
+                Title = "Just another event...",
+                Date = new DateTime(2015, 12, 11)
+            });
             base.Seed(context);
         }
     }
