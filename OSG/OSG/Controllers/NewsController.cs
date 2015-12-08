@@ -16,7 +16,7 @@ namespace OSG.Controllers
         // GET: News
         public ActionResult Index()
         {
-            return View();
+            return View(facade.GetNewsGateway().ReadAll());
         }
 
         public ActionResult Options()

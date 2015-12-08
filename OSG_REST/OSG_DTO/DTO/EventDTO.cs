@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OSG_DTO
 {
-    [DataContract]
+    [DataContract(IsReference = true)]
     public class EventDTO
     {
         [Key]

@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 
 namespace OSG_DTO
 {
-    [DataContract]
+    [DataContract(IsReference = true)]
     public class TrainerDTO
     {
         [Key]

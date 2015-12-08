@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Gateway.DomainModel.News>
 @{
     ViewBag.Title = "Index";
 }
@@ -16,30 +16,30 @@
     </div>
 </div>
 <hr />
+<div class="container news_container">
+    <div class="row">
+        @foreach (var news in Model)
+        {
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <div class="thumbnail movie-thumbnail">
 
-<div class="row news_table">
-    <div class="col-md-3 col-lg-3 left_news">
-        <table>
-            <tr>
-                <td>
-                    <h4 class="news_header">Oprydning efter nedrivning</h4>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="~/Content/Pictures/oprydning_2.jpg" class="img-responsive news_img">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p class="news_text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ex hendrerit, tincidunt risus porttitor, imperdiet lacus. Curabitur sem lacus, pulvinar eu vehicula in, dignissim ac lacus. Donec porttitor lobortis erat. Sed lacinia vitae est ut vehicula. Integer sit amet turpis eu enim lacinia tincidunt ut in nisi. Vivamus ultrices consequat magna eu rhoncus. Proin et hendrerit nibh.
-                    </p>
-                </td>
-            </tr>
-        </table>
+                    <img src="@news.Picture" alt="@news.Title" class="img-responsive">
+                    <div class="caption">
+                        <h3><strong>@news.Title</strong></h3>
+                    </div>
+                </div>
+            </div>
+        }
+
     </div>
-    <div class="col-md-3 col-lg-3 center_news">
+</div>
+
+
+
+
+
+
+@*<div class="col-md-3 col-lg-3 center_news">
         <table>
             <tr>
                 <td>
@@ -82,8 +82,8 @@
         </table>
 
     </div>
-    <div style="clear: both;"></div>
-</div>
+    <div style="clear: both;"></div>*@
+
 
 
 
