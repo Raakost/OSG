@@ -68,7 +68,7 @@ namespace Gateway.Services
         {
             using (var client = new HttpClient())
             {
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response =
                     client.GetAsync(HttpLink + ControllerName + "ReadByMonth/" + month).Result;
                 return response.Content.ReadAsAsync<List<Event>>().Result.ToList();
