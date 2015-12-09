@@ -273,7 +273,8 @@ li.logo {
 .news_thumb_wrapper {
     padding: 0px;
     box-sizing: border-box;
-    padding-bottom: 40px;
+    /*padding-bottom: 15px;*/
+    width: 33.333%;
 }
 
     .news_thumb_wrapper:nth-child(3n+1) {
@@ -288,7 +289,6 @@ li.logo {
     .news_thumb_wrapper:nth-child(3n+3) {
         padding-left: 25px;
     }
-
 
 /*price section*/
 .price_content_wrapper {
