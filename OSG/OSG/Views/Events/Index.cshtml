@@ -29,10 +29,10 @@
                         {
                             <li>
                                 <!-- Trigger the modal with a button -->
-                                <button type="button" class="trigger-button" data-toggle="modal" data-target="#myModal">@e.Title</button>
+                                <button type="button" class="trigger-button" data-toggle="modal" data-target="#myModal@(e.Id)">@e.Title</button>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal fade" id="myModal@(e.Id)" role="dialog">
                                     <div class="modal-dialog">
 
                                         <!-- Modal content-->
@@ -42,6 +42,14 @@
                                                 <h4 class="modal-title">@e.Title</h4>
                                             </div>
                                             <div class="modal-body">
+                                                @if (!e.Trainers.Any())
+                                                {
+                                                    <h4>Ingen trænere tilknyttet denne event.</h4>
+                                                }
+                                                @foreach (var item in e.Trainers)
+                                                {
+                                                    <h4 class="trainers">@item.FirstName @item.LastName</h4>
+                                                }
                                                 <p>@e.Description</p>
                                             </div>
                                             <div class="modal-footer">
@@ -68,10 +76,10 @@
                         {
                             <li>
                                 <!-- Trigger the modal with a button -->
-                                <button type="button" class="trigger-button" data-toggle="modal" data-target="#myModal">@e.Title</button>
+                                <button type="button" class="trigger-button" data-toggle="modal" data-target="#myModal@(e.Id)">@e.Title</button>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal fade" id="myModal@(e.Id)" role="dialog">
                                     <div class="modal-dialog">
 
                                         <!-- Modal content-->
@@ -81,6 +89,14 @@
                                                 <h4 class="modal-title">@e.Title</h4>
                                             </div>
                                             <div class="modal-body">
+                                                @if (!e.Trainers.Any())
+                                                {
+                                                    <h4>Ingen trænere tilknyttet denne event.</h4>
+                                                }
+                                                @foreach (var item in e.Trainers)
+                                                {
+                                                    <h4 class="trainers">@item.FirstName @item.LastName</h4>
+                                                }
                                                 <p>@e.Description</p>
                                             </div>
                                             <div class="modal-footer">
@@ -107,10 +123,10 @@
                         {
                             <li>
                                 <!-- Trigger the modal with a button -->
-                                <button type="button" class="trigger-button" data-toggle="modal" data-target="#myModal">@e.Title</button>
+                                <button type="button" class="trigger-button" data-toggle="modal" data-target="#myModal@(e.Id)">@e.Title</button>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal fade" id="myModal@(e.Id)" role="dialog">
                                     <div class="modal-dialog">
 
                                         <!-- Modal content-->
@@ -120,6 +136,14 @@
                                                 <h4 class="modal-title">@e.Title</h4>
                                             </div>
                                             <div class="modal-body">
+                                                @if (!e.Trainers.Any())
+                                                {
+                                                    <h4>Ingen trænere tilknyttet denne event.</h4>
+                                                }
+                                                @foreach (var item in e.Trainers)
+                                                {
+                                                    <h4 class="trainers">@item.FirstName @item.LastName</h4>
+                                                }
                                                 <p>@e.Description</p>
                                             </div>
                                             <div class="modal-footer">
@@ -146,10 +170,10 @@
                         {
                             <li>
                                 <!-- Trigger the modal with a button -->
-                                <button type="button" class="trigger-button" data-toggle="modal" data-target="#myModal">@e.Title</button>
+                                <button type="button" class="trigger-button" data-toggle="modal" data-target="#myModal@(e.Id)">@e.Title</button>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal fade" id="myModal@(e.Id)" role="dialog">
                                     <div class="modal-dialog">
 
                                         <!-- Modal content-->
@@ -159,6 +183,14 @@
                                                 <h4 class="modal-title">@e.Title</h4>
                                             </div>
                                             <div class="modal-body">
+                                                @if (!e.Trainers.Any())
+                                                {
+                                                    <h4>Ingen trænere tilknyttet denne event.</h4>
+                                                }
+                                                @foreach (var item in e.Trainers)
+                                                {
+                                                    <h4 class="trainers">@item.FirstName @item.LastName</h4>
+                                                }
                                                 <p>@e.Description</p>
                                             </div>
                                             <div class="modal-footer">
@@ -185,10 +217,10 @@
                         {
                             <li>
                                 <!-- Trigger the modal with a button -->
-                                <button type="button" class="trigger-button" data-toggle="modal" data-target="#myModal">@e.Title</button>
+                                <button type="button" class="trigger-button" data-toggle="modal" data-target="#myModal@(e.Id)">@e.Title</button>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal fade" id="myModal@(e.Id)" role="dialog">
                                     <div class="modal-dialog">
 
                                         <!-- Modal content-->
@@ -198,6 +230,14 @@
                                                 <h4 class="modal-title">@e.Title</h4>
                                             </div>
                                             <div class="modal-body">
+                                                @if (!e.Trainers.Any())
+                                                {
+                                                    <h4>Ingen trænere tilknyttet denne event.</h4>
+                                                }
+                                                @foreach (var item in e.Trainers)
+                                                {
+                                                    <h4 class="trainers">@item.FirstName @item.LastName</h4>
+                                                }
                                                 <p>@e.Description</p>
                                             </div>
                                             <div class="modal-footer">

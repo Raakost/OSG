@@ -7,8 +7,7 @@ namespace DAL.Context
 {
     public class OSGContextDBInitializer : DropCreateDatabaseAlways<OSGContext>
     {
-        private string description =
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in enim massa. Sed vestibulum vel ante quis elementum. Nam sollicitudin justo ac urna malesuada, in dictum enim ultrices. Suspendisse odio lorem, malesuada et enim id, congue rhoncus neque. Praesent pulvinar nibh pretium dolor laoreet, a eleifend nibh mollis. Quisque auctor purus eu nisl tincidunt, vitae tincidunt eros ullamcorper. Aliquam erat volutpat. Fusce diam eros, pulvinar id rhoncus nec, lobortis eget leo. Nullam tristique ipsum sit amet congue pulvinar. Maecenas fermentum, felis vitae pharetra elementum, risus risus porttitor sem, nec porta sapien mauris vitae sem. Fusce quis purus ligula. Maecenas rutrum porta fermentum. Sed ligula metus, tincidunt ac est ut, imperdiet egestas ante. Nullam nec ligula pulvinar, convallis quam ut, finibus lorem";
+
         protected override void Seed(OSGContext context)
         {
 
@@ -16,7 +15,7 @@ namespace DAL.Context
             var event1 = new Event()
             {
                 Id = 1,
-                Description = description,
+                Description = "Event event...dfddff",
                 Title = "Event with trainer",
                 Date = DateTime.Now
             };
@@ -52,7 +51,7 @@ namespace DAL.Context
             context.News.Add(new News()
             {
                 Title = "Lorem Ipsum",
-                Description = description,
+                Description = "ghdfjkln,mfnfdhjkfglmdf dgfhjkdsnbfdjkg ",
                 Picture = "/Content/Pictures/oprydning.jpg",
                 Date = new DateTime(2015, 12, 01)
 
@@ -60,56 +59,56 @@ namespace DAL.Context
             context.News.Add(new News()
             {
                 Title = "Lorem Ipsum",
-                Description = description,
+                Description = "ghjkmnbghjkmnbhjk  djkfl,dm",
                 Picture = "/Content/Pictures/maskine.jpg",
                 Date = new DateTime(2015, 12, 02)
             });
             context.News.Add(new News()
             {
                 Title = "Lorem Ipsum",
-                Description = description,
+                Description = "vfgdhjfnkdfmlgvd dhfjdbsfjk",
                 Picture = "/Content/Pictures/oprydning_2.jpg",
                 Date = new DateTime(2015, 12, 03)
             });
             context.News.Add(new News()
             {
                 Title = "Lorem Ipsum",
-                Description = description,
+                Description = "djfbdskfndslkfshj",
                 Picture = "/Content/Pictures/maskine2.jpg",
                 Date = new DateTime(2015, 12, 04)
             });
             context.News.Add(new News()
             {
                 Title = "Lorem Ipsum",
-                Description = description,
+                Description = "kdfdk njffkgn",
                 Picture = "/Content/Pictures/maskine.jpg",
                 Date = new DateTime(2015, 12, 05)
             });
             context.News.Add(new News()
             {
                 Title = "Lorem Ipsum",
-                Description = description,
+                Description = "lkgmgdsjkbfdjkggfg dffgg",
                 Picture = "/Content/Pictures/oprydning_2.jpg",
                 Date = new DateTime(2015, 12, 06)
             });
             context.News.Add(new News()
             {
                 Title = "Lorem Ipsum",
-                Description = description,
+                Description = "sdasdadada",
                 Picture = "/Content/Pictures/oprydning_2.jpg",
                 Date = new DateTime(2015, 12, 07)
             });
             context.News.Add(new News()
             {
                 Title = "Lorem Ipsum",
-                Description = description,
+                Description = "874854165fdgdfg",
                 Picture = "/Content/Pictures/oprydning.jpg",
                 Date = new DateTime(2015, 12, 08)
             });
             context.News.Add(new News()
             {
                 Title = "Lorem Ipsum",
-                Description = description,
+                Description = "dsflndsf8fgdsg",
                 Picture = "/Content/Pictures/maskine.jpg",
                 Date = new DateTime(2015, 12, 09)
             });
@@ -117,14 +116,14 @@ namespace DAL.Context
             //Events
             context.Event.Add(new Event()
             {
-                Description = description,
+                Description = "sdjfsdlksdfmf",
                 Title = "Event title",
                 Date = new DateTime(2015, 12, 05)
             });
 
             context.Event.Add(new Event()
             {
-                Description = description,
+                Description = "sdfsdfsgg33434",
                 Title = "Another event",
                 Date = new DateTime(2015, 12, 13)
             });
@@ -136,7 +135,7 @@ namespace DAL.Context
             });
             context.Event.Add(new Event()
             {
-                Description = description,
+                Description = "8f5gdfg",
                 Title = "Just another event...",
                 Date = new DateTime(2015, 12, 11)
             });

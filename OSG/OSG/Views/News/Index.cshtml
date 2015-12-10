@@ -19,70 +19,15 @@
 <div class="container news_container">
     <div class="row">
         @foreach (var news in Model)
-        {
+            {
             <div class="col-xs-4 col-sm-4 col-md-4 news_thumb_wrapper">
                 <div class="caption">
                     <h3>@news.Title</h3>
                 </div>
                 <div class="thumbnail news_thumbnail">
                     <img src="@news.Picture" alt="@news.Title" class="img-responsive">
-
                 </div>
             </div>
         }
     </div>
 </div>
-
-
-
-
-
-
-@*<div class="col-md-3 col-lg-3 center_news">
-        <table>
-            <tr>
-                <td>
-                    <h4 class="news_header">Ny Maskine</h4>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="~/Content/Pictures/maskine.jpg" class="img-responsive news_img">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p class="news_text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ex hendrerit, tincidunt risus porttitor, imperdiet lacus. Curabitur sem lacus, pulvinar eu vehicula in, dignissim ac lacus. Donec porttitor lobortis erat. Sed lacinia vitae est ut vehicula. Integer sit amet turpis eu enim lacinia tincidunt ut in nisi. Vivamus ultrices consequat magna eu rhoncus. Proin et hendrerit nibh.
-                    </p>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="col-md-3 col-lg-3 right_news">
-        <table>
-            <tr>
-                <td>
-                    <h4 class="news_header">Ny Maskine</h4>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="~/Content/Pictures/maskine2.jpg" class="img-responsive news_img">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p class="news_text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ex hendrerit, tincidunt risus porttitor, imperdiet lacus. Curabitur sem lacus, pulvinar eu vehicula in, dignissim ac lacus. Donec porttitor lobortis erat. Sed lacinia vitae est ut vehicula. Integer sit amet turpis eu enim lacinia tincidunt ut in nisi. Vivamus ultrices consequat magna eu rhoncus. Proin et hendrerit nibh.
-                    </p>
-                </td>
-            </tr>
-        </table>
-
-    </div>
-    <div style="clear: both;"></div>*@
-
-
-
-
