@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Gateway.Services.IGatewayService;
 using System.Net.Http;
 using Gateway.DomainModel;
@@ -33,12 +30,12 @@ namespace Gateway.Services
             }
         }
 
-        public IEnumerable<News> ReadAll(int amound = 10)
+        public IEnumerable<News> ReadAll()
         {
             using (var client = new HttpClient())
             {
                 HttpResponseMessage response =
-                    client.GetAsync(HttpLink + ControllerName + "/GetByAmound/" + amound).Result;
+                    client.GetAsync(HttpLink + ControllerName).Result;
                 return response.Content.ReadAsAsync<IEnumerable<News>>().Result;
             }
         }

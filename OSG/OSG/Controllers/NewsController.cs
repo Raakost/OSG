@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Migrations.Design;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Gateway.DomainModel;
 using Gateway.Facade;
-using OSG.Models;
 
 namespace OSG.Controllers
 {

@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using DAL;
 using DAL.DomainModel;
 using OSG_DTO;
 using OSG_DTO.Converter;
 using OSG_REST.Controllers.IController;
-using System.Runtime.InteropServices;
 
 namespace OSG_REST.Controllers
 {
@@ -29,7 +25,7 @@ namespace OSG_REST.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<NewsDTO> ReadAll(int amound)
+        public IEnumerable<NewsDTO> ReadAll()
         {
             return new NewsConverter().ConvertListToDTO(new Facade().GetNewsManager().ReadAll());
         }
