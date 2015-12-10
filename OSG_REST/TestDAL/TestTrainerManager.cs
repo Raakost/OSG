@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using NUnit.Framework;
 using DAL.DomainModel;
 using DAL.Managers;
@@ -38,20 +37,7 @@ namespace TestDAL
             };
 
         }
-
-        [Test]
-        public void Test_ReadAll_With_Count3_In_TrainerManager()
-        {
-            _trainerManager = new TrainerManager();
-            int amound = 3;
-            // The seed creates default 3+ trainers to the DB. Thats why
-            // we test with ReadAll(3).
-            Assert.AreEqual(amound, _trainerManager.ReadAll(amound).Count());
-
-            _trainer1 = _trainerManager.Create(_trainer2);
-            //amound++;
-            Assert.AreEqual(amound+1, _trainerManager.ReadAll(amound+1).Count());
-        }
+        
 
         /// <summary>
         /// Test if the first ID in the DB can be read with ReadByID(int number)

@@ -29,10 +29,9 @@ namespace OSG_REST.Controllers
         }
 
         [HttpGet]
-        [Route("api/News/GetByAmound/{amound}")]
         public IEnumerable<NewsDTO> ReadAll(int amound)
         {
-            return new NewsConverter().ConvertListToDTO(new Facade().GetNewsManager().ReadAll(amound));
+            return new NewsConverter().ConvertListToDTO(new Facade().GetNewsManager().ReadAll());
         }
 
         [HttpPut]

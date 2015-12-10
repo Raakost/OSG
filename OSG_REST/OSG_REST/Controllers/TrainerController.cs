@@ -18,17 +18,10 @@ namespace OSG_REST.Controllers
             return new TrainerConverter().ConvertModel(trainer);
         }
 
-        // This API call returns a list of trainers. The default amound of trainers returned is 10
-        // unless otherwise specified differently when calling the API.
-
-        // We use the [Route("route")] annotation here because we can't have two
-        // HttpGet requests with the same methode structur (T SomeName(int number)). 
-        // So we have to sepcify an alternative route for when we want to hit this method.
         [HttpGet]
-        [Route("api/Trainer/GetByAmound/{amound}")]
-        public IEnumerable<TrainerDTO> ReadAll(int amound = 10)
+        public IEnumerable<TrainerDTO> ReadAll()
         {
-            return new TrainerConverter().ConvertListToDTO(new Facade().GetTrainerManager().ReadAll(amound));
+            return new TrainerConverter().ConvertListToDTO(new Facade().GetTrainerManager().ReadAll());
         }
 
         [HttpGet]

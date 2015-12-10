@@ -35,11 +35,11 @@ namespace DAL.Managers
             }
         }
 
-        public IEnumerable<News> ReadAll(int amound)
+        public IEnumerable<News> ReadAll()
         {
             using (var ctx = new OSGContext())
             {
-                return ctx.News.Include("Comments").ToList().Take(amound);
+                return ctx.News.Include("Comments").ToList();
             }
         }
 

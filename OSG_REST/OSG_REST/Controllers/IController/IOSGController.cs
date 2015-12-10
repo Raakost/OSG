@@ -9,7 +9,7 @@ namespace OSG_REST.Controllers.IController
       
         T Create(T dto);
         T ReadById(int id);
-        IEnumerable<T> ReadAll(int amound);
+        IEnumerable<T> ReadAll();
         T Update(int id, T dto);
         Boolean Delete(int id);
 

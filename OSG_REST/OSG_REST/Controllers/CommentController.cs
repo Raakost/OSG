@@ -25,10 +25,9 @@ namespace OSG_REST.Controllers
         }
 
         [HttpGet]
-        [Route("api/Comment/GetByAmound/{amound}")]
-        public IEnumerable<CommentDTO> ReadAll(int amound)
+        public IEnumerable<CommentDTO> ReadAll()
         {
-            return new CommentConverter().ConvertListToDTO(new Facade().GetCommentManager().ReadAll(5));
+            return new CommentConverter().ConvertListToDTO(new Facade().GetCommentManager().ReadAll());
         }
 
         [HttpPut]

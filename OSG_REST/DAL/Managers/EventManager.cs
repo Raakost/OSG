@@ -37,11 +37,11 @@ namespace DAL.Managers
             }
         }
 
-        public IEnumerable<Event> ReadAll(int amound)
+        public IEnumerable<Event> ReadAll()
         {
             using (var ctx = new OSGContext())
             {
-                return ctx.Event.Include("Trainers").Take(amound).ToList();
+                return ctx.Event.Include("Trainers").ToList();
             }
         }
 

@@ -19,10 +19,9 @@ namespace OSG_REST.Controllers
         }
 
         [HttpGet]
-        [Route("api/Event/GetByAmound/{amound}")]
-        public IEnumerable<EventDTO> ReadAll(int amound)
+        public IEnumerable<EventDTO> ReadAll()
         {
-            return new EventConverter().ConvertListToDTO(new Facade().GetEventManager().ReadAll(/*5*/ amound));
+            return new EventConverter().ConvertListToDTO(new Facade().GetEventManager().ReadAll());
         }
 
         [HttpGet]
