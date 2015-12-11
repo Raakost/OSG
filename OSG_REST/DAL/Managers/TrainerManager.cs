@@ -24,6 +24,7 @@ namespace DAL.Managers
             }
         }
 
+        //Delete a trainer with a given ID, if the ID can be found in the DB.
         public bool Delete(Trainer model)
         {
             using (var ctx = new OSGContext())
@@ -39,6 +40,7 @@ namespace DAL.Managers
             }
         }
 
+        //Returns a IEnumerable with trainers including their events.
         public IEnumerable<Trainer> ReadAll()
         {
             using (var ctx = new OSGContext())
@@ -47,6 +49,7 @@ namespace DAL.Managers
             }
         }
 
+        //Returns a specific trainer with a given ID, and include his events for use if needed.
         public Trainer ReadByID(int Id)
         {
             using (var ctx = new OSGContext())
@@ -55,6 +58,7 @@ namespace DAL.Managers
             }
         }
 
+        //Updates the trainers properies, except for Events. Use the EventManagers update to update an event with trainers.
         public Trainer Update(Trainer model)
         {
             using (var ctx = new OSGContext())

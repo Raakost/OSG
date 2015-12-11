@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using DAL.Context;
 using DAL.DomainModel;
@@ -51,6 +50,7 @@ namespace DAL.Managers
             }
         }
 
+        //Update a comments name and text. (This is not used, but avaliable for use later)
         public Comment Update(Comment model)
         {
             using (var ctx = new OSGContext())
@@ -61,7 +61,7 @@ namespace DAL.Managers
                     commentToUpdate.Name = model.Name;
                     commentToUpdate.CommentText = model.CommentText;
                     //There is no need to update the news which a comment is linked to, since you can't move 
-                    //comments from one news to another or update a comment.
+                    //comments from one news to another..
                     //
                     ctx.SaveChanges();
                     return commentToUpdate;

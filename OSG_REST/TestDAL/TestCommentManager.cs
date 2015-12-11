@@ -16,10 +16,8 @@ namespace TestDAL
         [SetUp]
         public void Init()
         {
-            var news = new List<News>()
-            {
-                new News() {Description = "Disc 1", Title = "Test title 1"}
-            };
+            var news = new News() {Description = "Disc 1", Title = "Test title 1"};
+
             _comment1 = new Comment() {CommentText = "Text 1", Name = "Name 1", News = news};
 
             _comment2 = new Comment() { CommentText = "Text 2", Name = "Name 2"};
