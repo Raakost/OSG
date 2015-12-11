@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using Gateway.DomainModel;
 using Gateway.Facade;
@@ -31,19 +32,28 @@ namespace OSG.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View(new Event());
+            EventTrainers viewModel = new EventTrainers()
+            {
+                Trainers = facade.GetTrainerGateway().ReadAll()
+            };
+            return View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult Create(Event anEvent)
+        public ActionResult Create(Event anEvent, List<int> SelectedIDs)
         {
+            var trainerList = new List<Trainer>();
+            SelectedIDs.ForEach(id => trainerList.Add(new Trainer() { Id = id }));
+
             facade.GetEventGateway().Create(new Event()
             {
                 Id = anEvent.Id,
                 Date = anEvent.Date,
                 Title = anEvent.Title,
-                Description = anEvent.Description
+                Description = anEvent.Description,
+                Trainers = trainerList
             });
+
             return RedirectToAction("Options", "Events");
         }
 
