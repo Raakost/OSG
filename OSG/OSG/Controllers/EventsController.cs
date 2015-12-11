@@ -35,6 +35,7 @@ namespace OSG.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Event anEvent)
         {
             facade.GetEventGateway().Create(new Event()
