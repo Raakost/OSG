@@ -88,7 +88,7 @@ namespace TestDAL
         }
 
         [Test]
-        public void Test_Update_Events_On_Trainer()
+        public void Test_Update_Events_With_New_Event_On_Trainer()
         {
             var _event =
             new Event() {Title = "Test title", Id = 1};
@@ -101,10 +101,21 @@ namespace TestDAL
             _trainer5 = _trainerManager.Update(_trainer5);
             Assert.AreEqual(_event.Id, _trainer5.Events[0].Id);
 
-            var _event1 = new Event() {Title = "Test title2", Id = 1};
+            var _event1 = new Event() {Title = "Test title2", Id = 50};
             _trainer5.Events = new List<Event>() {_event1};
             _trainer5 = _trainerManager.Update(_trainer5);
             Assert.AreEqual(_event1.Id, _trainer5.Events[0].Id);
+            Assert.AreEqual(_event1.Id, new EventManager().ReadByID(_event1.Id).Id);
+        }
+
+        [Test]
+        public void Test_Adding_New_Trainer_With_Already_Existing_Event()
+        {
+            _trainerManager = new TrainerManager();
+            var eventList = new List<Event>() {new EventManager().ReadByID(1)};
+            var _trainer10 = new Trainer() {FirstName = "First Name", LastName = "Last Name", Events = eventList};
+            _trainer10 = _trainerManager.Create(_trainer10);
+            Assert.AreEqual(new EventManager().ReadByID(1).Id, _trainer10.Events[0].Id);
         }
     }
 }
