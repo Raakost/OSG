@@ -40,8 +40,12 @@ namespace OSG.Controllers
         }
 
         [HttpPost]
+<<<<<<< HEAD
         [ValidateAntiForgeryToken]
+        public ActionResult Create(Event anEvent)
+=======
         public ActionResult Create(Event anEvent, List<int> SelectedIDs)
+>>>>>>> e0834ec1609eec559476b34100a67b0020ef5c68
         {
             var trainerList = new List<Trainer>();
             SelectedIDs.ForEach(id => trainerList.Add(new Trainer() { Id = id }));

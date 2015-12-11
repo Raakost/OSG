@@ -15,6 +15,8 @@ namespace DAL.Managers
         {
             using (var ctx = new OSGContext())
             {
+                //Calling attach here makes sure the model(Trainer)s events are tracked by the context
+                // This way it will make a reference to an already existing event in the DB, instead of adding a new one.
                 ctx.Trainer.Attach(model);
                 var trainerToReturn = ctx.Trainer.Add(model);
                 ctx.SaveChanges();

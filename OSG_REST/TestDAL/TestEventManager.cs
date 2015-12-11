@@ -16,7 +16,13 @@ namespace TestDAL
         [SetUp]
         public void Init()
         {
+            var trainer =  new TrainerManager().ReadByID(1);
+            var trainers = new List<Trainer>() {trainer};
+            _event1 = new Event() {Trainers = trainers, Title = "Test title 1", Description = "disc 1"};
 
+            _event2 = new Event() {Title = "Test title 2", Description = "Disc 2", Id = 1};
+
+            _event3 = new Event() {Description = "Disc 3", Title = "Test title 3"};
         }
 
         [Test]
