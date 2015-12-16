@@ -26,6 +26,7 @@ namespace OSG.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Trainer trainer)
         {
             facade.GetTrainerGateway().Create(new Trainer()
@@ -49,6 +50,7 @@ namespace OSG.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(Trainer trainer)
         {
             facade.GetTrainerGateway().Update(trainer);

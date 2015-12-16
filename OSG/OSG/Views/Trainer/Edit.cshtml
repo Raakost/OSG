@@ -9,14 +9,15 @@
 <div class="customer-wrap">
     <div class="row">
         <form method="POST" action="Edit">
+            @Html.AntiForgeryToken()
             <div class="col-xs-6 col-md-6">
-                <input type="hidden" name="Id" value="@Model.Id" />
-                <input type="text" name="picture" value="@Model.Picture" class="form-control input-lg" placeholder="Picture" />
-                <input type="text" name="description" value="@Model.Description" class="form-control input-lg" placeholder="Description" />
-                <input type="text" name="email" value="@Model.Email" class="form-control input-lg" placeholder="Email" />
-                <input type="text" name="firstname" value="@Model.FirstName" class="form-control input-lg" placeholder="FirstName" />
-                <input type="text" name="lastname" value="@Model.LastName" class="form-control input-lg" placeholder="LastName" />
-                <input type="text" name="phoneno" value="@Model.PhoneNo" class="form-control input-lg" placeholder="PhoneNo" />
+                <input type="hidden" name="Id" value="@Model.Id"/>
+                <input type="text" name="picture" value="@Model.Picture" class="form-control input-lg" placeholder="Picture"/>
+                <input type="text" name="description" value="@Model.Description" class="form-control input-lg" placeholder="Description"/>
+                <input type="text" name="email" value="@Model.Email" class="form-control input-lg" placeholder="Email"/>
+                <input type="text" name="firstname" value="@Model.FirstName" class="form-control input-lg" placeholder="FirstName"/>
+                <input type="text" name="lastname" value="@Model.LastName" class="form-control input-lg" placeholder="LastName"/>
+                <input type="text" name="phoneno" value="@Model.PhoneNo" class="form-control input-lg" placeholder="PhoneNo"/>
                 <button class="btn btn-default" type="submit">Save Trainer</button>
             </div>
         </form>

@@ -16,17 +16,13 @@ namespace DAL.DomainModel
         [Key]
         [DataMember]
         public int Id { get; set; }
-
         [DataMember]
         [Column(TypeName = "datetime2")]
         public DateTime Date { get; set; }
-
         [DataMember]
         public List<Trainer> Trainers { get; set; }
-
         [DataMember]
         public string Description { get; set; }
-
         [DataMember]
         public string Title { get; set; }
     }

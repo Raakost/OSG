@@ -66,6 +66,7 @@ namespace OSG.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(Event anEvent)
         {
             facade.GetEventGateway().Update(anEvent);

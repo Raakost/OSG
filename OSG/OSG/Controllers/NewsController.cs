@@ -25,6 +25,7 @@ namespace OSG.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(News news)
         {
             facade.GetNewsGateway().Create(new News()
@@ -46,6 +47,7 @@ namespace OSG.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(News news)
         {
             facade.GetNewsGateway().Update(news);

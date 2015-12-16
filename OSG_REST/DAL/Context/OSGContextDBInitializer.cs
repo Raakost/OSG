@@ -14,7 +14,6 @@ namespace DAL.Context
             //Trainers
             var event1 = new Event()
             {
-                Id = 1,
                 Description = "Event event...dfddff",
                 Title = "Event with trainer",
                 Date = DateTime.Now
@@ -34,15 +33,15 @@ namespace DAL.Context
 
             context.Trainer.Add(new Trainer()
             {
-                FirstName = "Test First Name 1",
-                LastName = "Test Last Name 1",
+                FirstName = "Brian",
+                LastName = "Jensen",
                 Email = "Test1@mail.com",
                 PhoneNo = "11223344",
             });
             context.Trainer.Add(new Trainer()
             {
-                FirstName = "Test First Name 2",
-                LastName = "Test Last Name 2",
+                FirstName = "Charlotte",
+                LastName = "Jakobsen",
                 Email = "Test2@mail.com",
                 PhoneNo = "99887766",
             });
@@ -87,7 +86,7 @@ namespace DAL.Context
             context.News.Add(new News()
             {
                 Title = "Lorem Ipsum",
-                Description = "lkgmgdsjkbfdjkggfg dffgg",
+                Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet hendrerit leo sed commodo. Donec suscipit tellus quis tortor lacinia.",
                 Picture = "/Content/Pictures/oprydning_2.jpg",
                 Date = new DateTime(2015, 12, 06)
             });
@@ -116,15 +115,15 @@ namespace DAL.Context
             //Events
             context.Event.Add(new Event()
             {
-                Description = "sdjfsdlksdfmf",
-                Title = "Event title",
+                Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet hendrerit leo sed commodo. Donec suscipit tellus quis tortor lacinia.",
+                Title = "This is another event",
                 Date = new DateTime(2015, 12, 05)
             });
 
             context.Event.Add(new Event()
             {
-                Description = "sdfsdfsgg33434",
-                Title = "Another event",
+                Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet hendrerit leo sed commodo. Donec suscipit tellus quis tortor lacinia.",
+                Title = "Yet another event",
                 Date = new DateTime(2015, 12, 13)
             });
             context.Event.Add(new Event()
@@ -135,9 +134,9 @@ namespace DAL.Context
             });
             context.Event.Add(new Event()
             {
-                Description = "8f5gdfg",
-                Title = "Just another event...",
-                Date = new DateTime(2015, 12, 11)
+                Description = "2016 is  gonna rock!!",
+                Title = "Happy new year",
+                Date = new DateTime(2015, 12, 31)
             });
             base.Seed(context);
         }
