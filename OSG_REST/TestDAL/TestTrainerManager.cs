@@ -90,13 +90,11 @@ namespace TestDAL
         [Test]
         public void Test_Update_Events_With_New_Event_On_Trainer()
         {
-            var _event =
-            new Event() {Title = "Test title", Id = 1};
-
             _trainerManager = new TrainerManager();
             var _trainer5 = _trainerManager.ReadByID(1);
             Assert.AreEqual(_trainer5.Id, _trainerManager.ReadByID(_trainer5.Id).Id);
 
+            var _event = new Event() { Title = "Test title", Id = 1 };
             _trainer5.Events = new List<Event>() {_event};
             _trainer5 = _trainerManager.Update(_trainer5);
             Assert.AreEqual(_event.Id, _trainer5.Events[0].Id);
