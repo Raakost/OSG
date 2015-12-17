@@ -282,7 +282,7 @@ li.logo {
     }
 
     .news_thumb_wrapper:nth-child(3n+2) {
-        padding-right: 25px;
+        padding-right: 25px; 
         padding-left: 25px;
     }
 

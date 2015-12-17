@@ -40,6 +40,7 @@ namespace OSG.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Event anEvent, List<int> SelectedIDs)
         {
             var trainerList = new List<Trainer>();
@@ -65,6 +66,7 @@ namespace OSG.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(Event anEvent)
         {
             facade.GetEventGateway().Update(anEvent);

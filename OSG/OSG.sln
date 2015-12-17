@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSG", "OSG\OSG.csproj", "{E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "Gateway\Gateway.csproj", "{735ACB82-7433-48DA-8B4F-E68891C275C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{FDB884A8-C73D-484F-988D-92D63A9FA827}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{735ACB82-7433-48DA-8B4F-E68891C275C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{735ACB82-7433-48DA-8B4F-E68891C275C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{735ACB82-7433-48DA-8B4F-E68891C275C6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FDB884A8-C73D-484F-988D-92D63A9FA827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FDB884A8-C73D-484F-988D-92D63A9FA827}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FDB884A8-C73D-484F-988D-92D63A9FA827}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FDB884A8-C73D-484F-988D-92D63A9FA827}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
