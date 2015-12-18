@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DAL.Context;
 using DAL.DomainModel;
 using DAL.Managers.IManager;
@@ -15,8 +12,9 @@ namespace DAL.Managers
         {
             using (var ctx = new OSGContext())
             {
-                //Calling attach here makes sure the model(Trainer)s events are tracked by the context
-                // This way it will make a reference to an already existing event in the DB, instead of adding a new one.
+                // Calling attach here makes sure the model(Trainer)s events are tracked by the context
+                // This way it will make a reference to an already existing event in the DB, instead of adding a new one, if it exists.
+                // If the Event does not already exist, it will create it.
                 ctx.Trainer.Attach(model);
                 var trainerToReturn = ctx.Trainer.Add(model);
                 ctx.SaveChanges();
@@ -24,7 +22,7 @@ namespace DAL.Managers
             }
         }
 
-        //Delete a trainer with a given ID, if the ID can be found in the DB.
+        // Delete a trainer with a given ID, if the ID can be found in the DB. Do nothing and return false if the Trainer does not exist.
         public bool Delete(Trainer model)
         {
             using (var ctx = new OSGContext())
@@ -40,7 +38,7 @@ namespace DAL.Managers
             }
         }
 
-        //Returns a IEnumerable with trainers including their events.
+        // Returns a IEnumerable with Trainers including their Events.
         public IEnumerable<Trainer> ReadAll()
         {
             using (var ctx = new OSGContext())
@@ -49,7 +47,7 @@ namespace DAL.Managers
             }
         }
 
-        //Returns a specific trainer with a given ID, and include his events for use if needed.
+        // Returns a specific Trainer with a given ID, and include his Events for use if needed.
         public Trainer ReadByID(int Id)
         {
             using (var ctx = new OSGContext())
@@ -58,7 +56,7 @@ namespace DAL.Managers
             }
         }
 
-        //Updates the trainers properies, except for Events. Use the EventManagers update to update an event with trainers.
+        // Updates the Trainers properies, except for Events. Use the EventManagers update to update an Event with Trainers.
         public Trainer Update(Trainer model)
         {
             using (var ctx = new OSGContext())

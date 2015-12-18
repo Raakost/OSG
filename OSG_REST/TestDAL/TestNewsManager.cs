@@ -3,6 +3,7 @@ using DAL.DomainModel;
 using DAL.Managers;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TestDAL
 {
@@ -13,63 +14,110 @@ namespace TestDAL
         private News _news2;
         private News _news3;
         private NewsManager _newsManager;
+        private CommentManager _commentManager;
+        private List<Comment> comments;
 
         [SetUp]
         public void Init()
         {
-            var comments = new List<Comment>()
+            _newsManager = new NewsManager();
+            _commentManager = new CommentManager();
+
+            //Create a list of Comments to add to a News.
+            comments = new List<Comment>()
             {
-                new Comment() {CommentText = "Text1", Name = "Name1"},
-                new Comment() {CommentText = "Text2", Name = "Name2"}
+                new Comment() {Id = 1, CommentText = "News Test Text1", Name = "News Test Name1"},
+                new Comment() {Id = 2, CommentText = "News Test Text2", Name = "News Test Name2"}
             };
-            _news1 = new News(){Title = "Test title 1", Description = "Disc 1", Comments = comments};
-            _news2 = new News() {Date = DateTime.Now, Title = "Test title 2", Description = "disc 2"};
-            _news3 = new News() {Description = "disc 3", Title = "Test title 3", Id = 1};
-        }
 
-        [Test]
-        public void Test_ReadByID_In_NewsManager()
-        {
-            _newsManager = new NewsManager();
-            Assert.AreEqual(1, _newsManager.ReadByID(1).Id);
-        }
-
-        [Test]
-        public void Test_ReadByID_In_NewsManager_After_Create()
-        {
-            _newsManager = new NewsManager();
-            _news3 = _newsManager.Create(_news3);
-            Assert.AreEqual(_news3.Id, _newsManager.ReadByID(_news3.Id).Id);
-        }
-
-        [Test]
-        public void Test_Delete_News()
-        {
-            _newsManager = new NewsManager();
-            _news2 = _newsManager.Create(_news2);
-            Assert.AreEqual(_news2.Id, _newsManager.ReadByID(_news2.Id).Id);
-            var IsDeleted = _newsManager.Delete(_news2);
-            Assert.AreEqual(true, IsDeleted);
-        }
-
-        [Test]
-        public void Test_Update_Discription_On_News_After_Create()
-        {
-            _newsManager = new NewsManager();
-            var testDescription = "Create Description";
-            var _news4 = _newsManager.Create(new News()
+            //Create a News and set its Comments to be squal to the above Commentlist.
+            _news1 = new News()
             {
-                Id = 1,
-                Title = "Test Title 12",
-                Description = testDescription,
-            });
+                Title = "Test Title 1", Description = "Test Disc 1", Comments = comments, Id = 1,
+                Date = DateTime.Now, Picture = "/Content/Pictures/oprydning.jpg"
+            };
 
-            Assert.AreEqual(testDescription, _news4.Description);
+            //Create the Comments in the DB.
+            foreach (var comment in comments)
+            {
+                _commentManager.Create(comment);
+            }
 
-            _news4.Description = "New Description";
-            _news4 = _newsManager.Update(_news4);
 
-            Assert.AreEqual(_news4.Description, _newsManager.ReadByID(_news4.Id).Description);
+            _news2 = new News() {Date = DateTime.Now, Title = "Test Title 2", Description = "Test Disc 2"};
+            _news3 = new News() {Description = "Test Disc 3", Title = "Test Title 3", Id = 1};
+        }
+
+        [Test]
+        public void Test_ReadById_in_newsManager_after_Create()
+        {
+            //When we Create this News. The list of Comments inside, will then have the correct foringkey to this News.
+            _news1 = _newsManager.Create(_news1);
+            Assert.AreNotEqual(null, _news1);
+
+            int id = _newsManager.ReadByID(_news1.Id).Id;
+            Assert.AreEqual(_news1.Id, id);
+        }
+
+        [Test]
+        public void Test_Delete_in_newsManager_after_Create()
+        {
+            _news2 = _newsManager.Create(_news2);
+            Assert.AreNotEqual(null, _news2);
+
+            var isDeleted = _newsManager.Delete(_news2);
+            Assert.AreEqual(true, isDeleted);
+        }
+
+        [Test]
+        public void Test_ReadAll_in_newsManager()
+        {
+            var count = _newsManager.ReadAll().Count();
+            Assert.AreEqual(count, _newsManager.ReadAll().Count());
+        }
+
+        [Test]
+        public void Test_Update_News_in_newsManager()
+        {
+            var _newsToUpdate = _newsManager.Create(_news3);
+            Assert.AreEqual(_newsToUpdate.Title, _news3.Title);
+
+            string newTitle = "News Test Title 3 Updated";
+            _newsToUpdate.Title = newTitle;
+            _newsToUpdate = _newsManager.Update(_newsToUpdate);
+            Assert.AreEqual(_newsToUpdate.Title, newTitle);
+        }
+
+        [Test]
+        public void Test_not_Updating_a_News_in_newsManager()
+        {
+            //Id 50 is not existing in the Database. We remake the Database with a new seed every time the application runs.
+            //The default amound of news is 9.
+            int noneExistingId = 50;
+            var _news = new News()
+            {
+                Id = noneExistingId,
+                Title = "I will not be deleted1",
+                Description = "This news will not update"
+            };
+            _news = _newsManager.Update(_news);
+            Assert.AreEqual(noneExistingId, _news.Id);
+        }
+
+        [Test]
+        public void Test_not_Deleting_a_News_in_newsManager()
+        {
+            //Id 50 is not existing in the Database. We remake the Database with a new seed every time the application runs.
+            //The default amound of news is 9.
+            int noneExistingId = 50;
+            var _news = new News()
+            {
+                Id = noneExistingId,
+                Title = "I will not be deleted2",
+                Description = "This news will not update"
+            };
+            var isDeleted = _newsManager.Delete(_news);
+            Assert.AreEqual(false, isDeleted);
         }
     }
 }

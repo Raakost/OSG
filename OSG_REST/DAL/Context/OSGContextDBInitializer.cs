@@ -18,6 +18,7 @@ namespace DAL.Context
                 Title = "Event with trainer",
                 Date = DateTime.Now
             };
+            //Add an event here to the Db, which will later be used as a reference for a trainer.
             event1 = context.Event.Add(event1);
             var trainer1 = new Trainer()
             {
@@ -25,9 +26,11 @@ namespace DAL.Context
                 LastName = "Madsen",
                 Email = "mikkel@mail.com",
                 PhoneNo = "22334455",
-                Events = new List<Event>() { event1 }
             };
+            //Add the event1 as a reference in trainer1.
+            trainer1.Events.Add(event1);
 
+            //Call attach here to make sure a foringkey connection in the DB is created.
             context.Trainer.Attach(trainer1);
             context.Trainer.Add(trainer1);
 
