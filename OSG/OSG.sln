@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSG", "OSG\OSG.csproj", "{E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "Gateway\Gateway.csproj", "{735ACB82-7433-48DA-8B4F-E68891C275C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGateway", "TestGateway\TestGateway.csproj", "{49A63B51-3E29-4D84-8D25-3DC63CD0C039}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{735ACB82-7433-48DA-8B4F-E68891C275C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{735ACB82-7433-48DA-8B4F-E68891C275C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{735ACB82-7433-48DA-8B4F-E68891C275C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49A63B51-3E29-4D84-8D25-3DC63CD0C039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49A63B51-3E29-4D84-8D25-3DC63CD0C039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49A63B51-3E29-4D84-8D25-3DC63CD0C039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49A63B51-3E29-4D84-8D25-3DC63CD0C039}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Linq;
 using NUnit.Framework;
 using DAL.DomainModel;
 using DAL.Managers;
@@ -12,13 +13,17 @@ namespace TestDAL
         private Trainer _trainer2;
         private Trainer _trainer3;
         private TrainerManager _trainerManager;
+        private EventManager _eventManager;
 
         [SetUp]
         public void Init()
         {
+            _trainerManager = new TrainerManager();
+            _eventManager = new EventManager();
+
             _trainer1 = new Trainer()
             {
-                Id = 4,
+                Id = 1,
                 FirstName = "Test FirstName 9",
                 LastName = "Test LastName 9",
                 Email = "Test9@mail.com",
@@ -28,94 +33,108 @@ namespace TestDAL
 
             _trainer2 = new Trainer()
             {
+                Id = 2,
                 FirstName = "Test FirstName 10"
             };
             _trainer3 = new Trainer()
             {
-                Id = 4,
+                Id = 3,
                 FirstName = "Test FirstName 11"
             };
-
-        }
-        
-
-        /// <summary>
-        /// Test if the first ID in the DB can be read with ReadByID(int number)
-        /// </summary>
-        [Test]
-        public void Test_ReadByID_In_TrainerManager()
-        {
-            _trainerManager = new TrainerManager();
-            Assert.AreEqual(1, _trainerManager.ReadByID(1).Id);
         }
 
         [Test]
-        public void Test_ReadByID_In_TrainerManager_After_Create()
+        public void Test_ReadById_in_trainerManager_after_Create()
         {
-            _trainerManager = new TrainerManager();
-            _trainer3 = _trainerManager.Create(_trainer3);
-            Assert.AreEqual(_trainer3.Id, _trainerManager.ReadByID(_trainer3.Id).Id);
+            _trainer1 = _trainerManager.Create(_trainer1);
+            Assert.AreNotEqual(null, _trainer1);
+
+            int id = _trainerManager.ReadByID(_trainer1.Id).Id;
+            Assert.AreEqual(_trainer1.Id, id);
         }
 
         [Test]
-        public void Test_Delete_Trainer()
+        public void Test_Delete_in_trainerManager_after_Create()
         {
-            _trainerManager = new TrainerManager();
             _trainer2 = _trainerManager.Create(_trainer2);
-            Assert.AreEqual(_trainer2.Id, _trainerManager.ReadByID(_trainer2.Id).Id);
-            var IsDeleted = _trainerManager.Delete(_trainer2);
-            Assert.AreEqual(true, IsDeleted);
+            Assert.AreNotEqual(null, _trainer2);
+
+            var isDeleted = _trainerManager.Delete(_trainer2);
+            Assert.AreEqual(true, isDeleted);
         }
 
         [Test]
-        public void Test_Update_Discription_Trainer_After_Create()
+        public void Test_ReadAll_in_trainerManager()
         {
-            _trainerManager = new TrainerManager();
-            var testDescription = "Create Description";
-            var _trainer4 = _trainerManager.Create(new Trainer()
+            var count = _trainerManager.ReadAll().Count();
+            Assert.AreEqual(count, _trainerManager.ReadAll().Count());
+        }
+
+        [Test]
+        public void Test_Update_existing_trainer_with_existing_event_in_trainerManager()
+        {
+            //Create new event, and add it to the Database.
+            var _event = _eventManager.Create(new Event()
             {
                 Id = 1,
-                FirstName = "Test First Name 12",
-                Description = testDescription,
+                Title = "Test title 'trainer'",
+                Description = "Test disc 'trainer'",
+                Date = DateTime.Now
             });
+            Assert.AreEqual(_event.Id, _eventManager.ReadByID(_event.Id).Id);
 
-            Assert.AreEqual(testDescription, _trainer4.Description);
+            //Get the trainer with Id 1 from the Database, and make sure he is not null.
+            var _trainer = _trainerManager.ReadByID(1);
+            Assert.AreNotEqual(null, _trainer);
 
-            _trainer4.Description = "New Description";
-            _trainer4 = _trainerManager.Update(_trainer4);
+            //Add the Event we just added to the Database, to the Trainer we just got from the Database.
+            _trainer.Events.Add(_event);
 
-            Assert.AreEqual(_trainer4.Description, _trainerManager.ReadByID(_trainer4.Id).Description);
+            //Update the Trainer in the database with the foringkey to the Event.
+            _trainer = _trainerManager.Update(_trainer);
+
+            //Read the Event we now have a foringkey connection to, from the Database, based on the Title of the Event in the Trainer.
+            _event = _eventManager.ReadByID(_trainer.Events.FirstOrDefault(trainerEvent => trainerEvent.Title == _event.Title).Id);
+
+            //Check if the Event is not null.
+            Assert.AreNotEqual(null, _event);
+
+            //Check if the Event Id we got from the Database matches the Trainer we updated.
+            Assert.AreEqual(_event.Id, _trainer.Events.FirstOrDefault(trainerEvent => trainerEvent.Id == _event.Id).Id);
         }
 
         [Test]
-        public void Test_Update_Events_With_New_Event_On_Trainer()
+        public void Test_not_Updating_a_Trainer_in_trainerManager()
         {
-            var _event =
-            new Event() {Title = "Test title", Id = 1};
-
-            _trainerManager = new TrainerManager();
-            var _trainer5 = _trainerManager.ReadByID(1);
-            Assert.AreEqual(_trainer5.Id, _trainerManager.ReadByID(_trainer5.Id).Id);
-
-            _trainer5.Events = new List<Event>() {_event};
-            _trainer5 = _trainerManager.Update(_trainer5);
-            Assert.AreEqual(_event.Id, _trainer5.Events[0].Id);
-
-            var _event1 = new Event() {Title = "Test title2", Id = 50};
-            _trainer5.Events = new List<Event>() {_event1};
-            _trainer5 = _trainerManager.Update(_trainer5);
-            Assert.AreEqual(_event1.Id, _trainer5.Events[0].Id);
-            Assert.AreEqual(_event1.Id, new EventManager().ReadByID(_event1.Id).Id);
+            //Id 50 is not existing in the Database. We remake the Database with a new seed every time the application runs.
+            //The default amound of trainers is 3.
+            int noneExistingId = 50;
+            var _trainer = new Trainer()
+            {
+                Id = noneExistingId,
+                FirstName = "Huggo",
+                LastName = "Boss",
+                Description = "This trainer will not update"
+            };
+            _trainer = _trainerManager.Update(_trainer);
+            Assert.AreEqual(noneExistingId, _trainer.Id);
         }
 
         [Test]
-        public void Test_Adding_New_Trainer_With_Already_Existing_Event()
+        public void Test_not_Deleting_a_Trainer_in_trainerManager()
         {
-            _trainerManager = new TrainerManager();
-            var eventList = new List<Event>() {new EventManager().ReadByID(1)};
-            var _trainer10 = new Trainer() {FirstName = "First Name", LastName = "Last Name", Events = eventList};
-            _trainer10 = _trainerManager.Create(_trainer10);
-            Assert.AreEqual(new EventManager().ReadByID(1).Id, _trainer10.Events[0].Id);
+            //Id 50 is not existing in the Database. We remake the Database with a new seed every time the application runs.
+            //The default amound of trainers is 3.
+            int noneExistingId = 50;
+            var _trainer = new Trainer()
+            {
+                Id = noneExistingId,
+                FirstName = "Bobby",
+                LastName = "Stein",
+                Description = "This trainer will not update"
+            };
+            var isDeleted = _trainerManager.Delete(_trainer);
+            Assert.AreEqual(false, isDeleted);
         }
     }
 }
