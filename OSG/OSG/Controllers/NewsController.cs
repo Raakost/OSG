@@ -1,6 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using Gateway.DomainModel;
 using Gateway.Facade;
+using OSG.Models.ViewModel;
 
 namespace OSG.Controllers
 {
@@ -8,9 +10,12 @@ namespace OSG.Controllers
     {
         Facade facade = new Facade();
         // GET: News
-        public ActionResult Index()
+        public ActionResult Index(int? newsId)
         {
-            return View(facade.GetNewsGateway().ReadAll());
+            var newsIndex = new NewsIndex();
+            newsIndex.Id = newsId;
+            newsIndex.newsList = facade.GetNewsGateway().ReadAll().ToList();
+            return View(newsIndex);
         }
 
         public ActionResult Options()
