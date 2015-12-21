@@ -206,6 +206,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ViewModel\EventCalendar.cs" />
     <Compile Include="Models\ViewModel\EventTrainers.cs" />
+    <Compile Include="Models\ViewModel\NewsIndex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
