@@ -61,10 +61,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCommentGateway.cs" />
+    <Compile Include="TestEventGateway.cs" />
+    <Compile Include="TestNewsGateway.cs" />
     <Compile Include="TestTrainerGateway.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gateway\Gateway.csproj">
+      <Project>{735acb82-7433-48da-8b4f-e68891c275c6}</Project>
+      <Name>Gateway</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
